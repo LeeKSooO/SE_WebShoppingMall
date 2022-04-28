@@ -1,29 +1,50 @@
 // 이한슬
+// 거래내역 관리 Requirement list
+
+// 판매 완료된 상품 내역 조회 기능
+[1] 
+Requrement: 회원은 자신이 판매 완료한 의류 상품을 조회할 수 있다.
+Use Case: 판매 완료 내역 조회
+Func/Non-Func: Functional
+Actor: 내역 관리자
+
+[2] 
+Requrement: 판매 완료한 상품은 판매 종료일이 지났거나 남은 수량이 0이 된 상품을 의미한다. 
+Use Case: 판매 완료 기능
+Func/Non-Func: Functional
+Event: 판매 종료일 지남
+Event: 남은 수량이 0이 됨
+
+[3]
+Requrement: 각 상품에 대해 상품명, 제작회사명, 가격, 판매된 수량, 평균 구매만족도를 출력한다.
+Use Case: 판매 내역 상세 정보 제공
+Func/Non-Func: Functional
+
 
 // 상품 구매 내역 관리 기능
 [1] 
 Requrement: 회원은 구매 내역(상품명, 제작회사명, 판매자, 가격, 평균 구매만족도, 구매일)을 조회할 수 있다.
 Use Case: 구매 내역 조회
 Func/Non-Func: Functional
-액터: 회원
+Actor: 내역 관리자
 
 [2]
-Requrement: 이때 상품명의 오름차순으로 정렬해서 출력한다.
-Use Case: 구매 내역 오름차순 정렬 (extend 구매내역 조회)
-Functional
-액터: 회원
+Requrement: 회원은 구매 내역(상품명, 제작회사명, 판매자, 가격, 평균 구매만족도, 구매일)을 조회할 수 있다.
+Use Case: 구매 내역 상세 정보 제공
+Func/Non-Func: Functional
 
 [3]
 Requrement: 조회된 구매 내역 중에서 하나의 상품을 선택하여 구매만족도를 평가할 수 있다.
 Use Case: 구매 만족도 평가
 Func/Non-Func: Functional
-액터: 회원
+Actor: 내역 관리자
 
 [4]
 Requrement: 조회된 구매 내역 중에서 하나의 상품을 선택하여 구입 후 4주가 지나지 않은 상품의 경우 환불을 신청할 수 있다.
 Use Case: 환불 신청
 Func/Non-Func: Functional
-액터: 회원
+Actor: 내역 관리자
+
 [5]
 Requrement: 환불을 신청하는 경우 택배사에 자동으로 물품 수거 신청이 요청된다
 Use Case: 택배사에 물품 수거 신청
@@ -31,12 +52,33 @@ Func/Non-Func: Functional
 Event: 환불 신청
 외부 시스템: 택배사
 
+// + 거래 내역 조회
+[1]
+Requrement: 회원은 자신이 판매 완료한 의류 상품을 조회할 수 있다.
+            /회원은 구매 내역(상품명, 제작회사명, 판매자, 가격, 평균 구매만족도, 구매일)을 조회할 수 있다. 
+Use Case: 거래 내역 조회
+Func/Non-Func: Functional
+판매 완료 내역 조회와 구매 내역 조회를 일반화한 use case 이다.
+
+[2]
+Requirement: 각 상품에 대해 상품명, 제작회사명, 가격, 판매된 수량, 평균 구매만족도를 출력한다.
+            /회원은 구매 내역(상품명, 제작회사명, 판매자, 가격, 평균 구매만족도, 구매일)을 조회할 수 있다.
+Use Case: 거래 내역 상세 정보 제공
+Func/Non-Func: Functional
+판매 내역 상세 정보 제공과 구매 내역 상세 정보 제공을 일반화한 use case이다.
+
+[3]
+Requirement: 이때 상품명의 오름차순으로 정렬해서 출력한다.
+Use Case: 오름차순 정렬
+Func/Non-Func: Functional
+거래내역을 오름차순으로 정렬한다.
+
 // 상품 구매 내역 삭제 기능
 [1]
 Requrement: 3개월이 지난 구매 거래내역부터 임의로 삭제가 가능하며 그 이전의 거래내역은 임의로 삭제가 불가능하다.
 Use Case: 구매 내역 삭제
 Func/Non-Func: Functional
-액터: 회원
+Actor: 내역 관리자
 
 [2]
 Requrement: 6개월이 지난 거래내역은 자동으로 삭제된다.
@@ -46,12 +88,23 @@ Event: 거래 내역 6개월 지남
 
 // 상품 판매/구매 통계 기능
 [1]
-Requrement: 회원이 판매한 상품에 대한 총액 및 평균 구매만족도와 구매한 상품에 대한 총액 및 평균 구매만족도를 출력한다. (삭제된 구매 내역은 통계에서 제외한다)
-Use Case: 판매/구매 상품의 총액과  평균 구매 만족도 출력
+Requrement: 회원이 판매한 상품에 대한 총액 및 평균 구매만족도를 출력한다.
+Use Case: 판매 상품의 총액과 평균 구매 만족도 출력
 Func/Non-Func: Functional
-액터: 회원
-
+Actor: 내역 관리자
 [2]
+Requrement: 회원이 구매한 상품에 대한 총액 및 평균 구매만족도를 출력한다(삭제된 구매 내역은 통계에서 제외한다)
+Use Case: 구매 상품의 총액과 평균 구매 만족도 출력
+Func/Non-Func: Functional
+Actor: 내역 관리자
+
+[3]
+Requrement: 총액 및 평균 구매만족도를 출력한다.
+Use Case: 통계(총액, 평균 구매 만족도) 출력
+Func/Non-Func: Functional
+판매 통계 출력과 구매 통계 출력을 일반화한 use case이다.
+
+[4]
 Requrement: 매월 말일에 모든 회원들에게 그 달에 대한 판매 및 구매 통계 정보를 이메일로 공지된다
 Use Case: 통계 정보 통지
 Func/Non-Func: Functional
