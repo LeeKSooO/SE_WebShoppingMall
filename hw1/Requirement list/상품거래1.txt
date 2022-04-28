@@ -1,0 +1,110 @@
+// 이경수
+// 상품거래 Requirement list
+
+
+//보안
+[1]
+Requirement: 구매 회원이 결제기능을 사용할 시 카드 회사로 개인 정보를 안전하게 넘겨주어야 한다.
+Func/Non-Func: Non-Functional
+
+[2]
+Requirement: 판매/구매 과정에서 반드시 사용자 인증을 거쳐야 하고, 인증 방법은 사용성을 고려한다.
+Func/Non-Func: Non-Functional
+
+
+// 판매 의류 등록 및 조회/수정/삭제 기능
+[1] 
+Requrement: 회원은 자신이 팔고자 하는 의류 상품을 등록할 수 있다.
+Use Case: 판매의류 등록
+Func/Non-Func: Functional
+Actor: 판매 회원
+
+[2] 
+Requrement: 판매 상품을 등록한 회원은 자신이 등록한 상품의 list를 조회할 수 있다.
+Use Case: 판매상품 list 조회
+Func/Non-Func: Functional
+Actor: 판매 회원
+
+[3]
+Requrement: 판매 회원은 자신이 등록한 상품에 대해 모든 항목을 수정할 수 있다.
+Use Case: 판매등록상품 수정
+Func/Non-Func: Functional
+Actor: 판매 회원
+
+[4]
+Requrement: 판매 회원은 자신이 등록한 상품에 대해 모든 항목을 삭제할 수 있다.
+Use Case: 판매등록상품 삭제
+Func/Non-Func: Functional
+Actor: 판매 회원
+
+[5]
+Requirement: 판매 회원은 자신이 등록한 상품에 대한 수정, 삭제 권한을 갖기 위해 본인 인증을 거쳐야 한다.
+Use Case: 회원 인증
+Func/Non-Func: Functional
+Actor: 판매 회원
+
+[6]
+Requirement: 상품의 상세정보를 출력해 판매등록상품의 항목을 수정하거나 삭제할 수 있게 한다.
+Use Case: 상품 상세정보출력
+Func/Non-Func: Functional
+Actor: 판매 회원
+
+
+// 상품 정보 조회 및 상품 구매 기능
+[1] 
+Requrement: 회원은 사고자 하는 상품에 대해 검색 조건에 따른 검색을 할 수 있다.
+Use Case: 상품 검색
+Func/Non-Func: Functional
+Actor: 구매 회원
+
+[2]
+Requrement: 구매 회원은 본인 인증을 거쳐 검색한 상품을 구매할 수 있다. 
+Use Case: 상품구매
+Func/Non-Func: Functional
+Actor: 구매 회원
+
+[3]
+Requirement: 구매 회원은 상품 구매 시 추가 상품을 구매할 수 있다.
+Use Case: 추가상품구매
+Func/Non-Func: Functional
+Actor: 구매 회원
+
+
+// 결제 기능
+[1]
+Requrement: 구매 회원은 구매하고자 하는 상품에 대해 결제를 할 수 있다.
+Use Case: 결제기능
+Func/Non-Func: Functional
+Actor: 구매 회원
+
+[2]
+Requirement: 구매 회원이 결제를 하면 카드회사에 결제 정보를 넘겨줄 수 있다.
+Use Case: 결제기능
+Func/Non-Func: Functional
+Actor: 카드사
+
+[3]
+Requirement: 구매 회원은 결제 시 적립되어있는 포인트를 사용할 수 있다.
+Use Case: 포인트사용
+Func/Non-Func: Functional
+Actor: 구매 회원
+
+[4]
+Requirement: 구매 회원은 구매한 상품에 대해 환불 신청을 할 수 있다.
+Use Case: 환불
+Func/Non-Func: Functional
+Actor: 구매 회원
+
+
+// 포인트 적립 기능
+[1]
+Requirement: 구매 회원이 결제를 하면 admin은 결제 정보를 받아 포인트적립을 할 수 있다.
+Use Case: 결제기능
+Func/Non-Func: Functional
+Actor: 관리자
+
+[2]
+Requirement: 환불 신청이 있으면 구매 회원이 구매 시 사용하였던 포인트를 반환해준다.
+Use Case:환불
+Func/Non-Func: Functional
+Actor: 관리자
