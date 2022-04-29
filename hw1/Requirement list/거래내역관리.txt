@@ -35,9 +35,8 @@ Func/Non-Func: Functional
 
 [3]
 Requrement: 조회된 구매 내역 중에서 하나의 상품을 선택하여 구매만족도를 평가할 수 있다.
-Use Case: 구매 만족도 평가
+Use Case: 구매 만족도 평가(extend 구매내역 상세 정보 제공)
 Func/Non-Func: Functional
-Actor: 내역 관리자
 
 [4]
 Requrement: 조회된 구매 내역 중에서 하나의 상품을 선택하여 구입 후 4주가 지나지 않은 상품의 경우 환불을 신청할 수 있다.
