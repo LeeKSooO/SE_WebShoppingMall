@@ -1,0 +1,47 @@
+// 엄새얀
+// 회원 관리 Requirement list
+
+// 회원가입
+[1] 
+Requrement: 사용자는 회원가입을 통해 사이트 사용 권한을 얻을 수 있다.
+Use Case: 회원가입
+Func/Non-Func: Non-Functional
+Actor: 사용자
+
+[2] 
+Requrement: 사용자는 회원가입을 위해 사용자의 기본 정보(이름, 주민번호, 주소, 이메일 등)과 ID/Password를 입력한다.
+Use Case: 회원가입
+Func/Non-Func: Functional
+Actor: 사용자
+
+//회원탈퇴
+[1] 
+Requrement: 회원은 이 사이트에서 탈퇴할 수 있다. 
+Use Case: 회원탈퇴
+Func/Non-Func: Functional
+Actor: 회원
+
+[2] 
+Requrement: 회원에 등록된 상품이 하나도 없는 상태에서 탈퇴할 수 있다. 그리고 시스템의 사용 권한이 소멸된다 
+Use Case: 회원탈퇴
+Func/Non-Func: Non-Functional
+Actor: 회원
+
+//로그인, 로그아웃
+[1] 
+Requrement: 회원은 자신이 가입할 때 입력했던 ID와 Password로 로그인할 수 있다.
+Use Case: 로그인
+Func/Non-Func: Functional
+Actor: 회원
+
+[2] 
+Requrement: 회원은 로그아웃을 할 수 있다.
+Use Case: 로그아웃
+Func/Non-Func: Functional
+Actor: 회원
+
+[3] 
+Requrement: 회원이 로그아웃을 하면 프로그램을 자동으로 종료한다.
+Use Case: 로그아웃
+Func/Non-Func: Non-Functional
+Actor: 회원
