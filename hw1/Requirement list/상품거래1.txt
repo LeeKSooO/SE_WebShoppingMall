@@ -37,11 +37,7 @@ Use Case: 판매등록상품 삭제
 Func/Non-Func: Functional
 Actor: 판매 회원
 
-[5]
-Requirement: 판매 회원은 자신이 등록한 상품에 대한 수정, 삭제 권한을 갖기 위해 본인 인증을 거쳐야 한다.
-Use Case: 회원 인증
-Func/Non-Func: Functional
-Actor: 판매 회원
+
 
 [6]
 Requirement: 상품의 상세정보를 출력해 판매등록상품의 항목을 수정하거나 삭제할 수 있게 한다.
@@ -57,8 +53,11 @@ Use Case: 상품 검색
 Func/Non-Func: Functional
 Actor: 구매 회원
 
+//[2] 
+정렬기준변경
+
 [2]
-Requrement: 구매 회원은 본인 인증을 거쳐 검색한 상품을 구매할 수 있다. 
+Requrement: 구매 회원은 검색한 상품을 구매할 수 있다. 
 Use Case: 상품구매
 Func/Non-Func: Functional
 Actor: 구매 회원
@@ -89,6 +88,9 @@ Use Case: 포인트사용
 Func/Non-Func: Functional
 Actor: 구매 회원
 
+포인트는 3000점 이상이 적립되어 있는 경우에 사용 가능하다.
+넌펑ㅕ널
+
 [4]
 Requirement: 구매 회원은 구매한 상품에 대해 환불 신청을 할 수 있다.
 Use Case: 환불
@@ -108,3 +110,9 @@ Requirement: 환불 신청이 있으면 구매 회원이 구매 시 사용하였
 Use Case:환불
 Func/Non-Func: Functional
 Actor: 관리자
+
+유스케이스: 포인트 적립
+액터: 결제 이벤트
+
+유케이스: 포인트 반환
+액터: 환불신청 이벤트
