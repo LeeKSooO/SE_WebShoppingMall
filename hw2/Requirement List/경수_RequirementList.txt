@@ -1,0 +1,36 @@
+// 이경수
+// 상품거래 Requirement list
+
+
+// 판매 의류 등록 및 조회 기능
+[1] 
+Requirement: 회원은 자신이 팔고자 하는 의류 상품을 등록할 수 있다.
+Use Case: 판매의류 등록
+Func/Non-Func: Functional
+Actor: 회원
+
+[2] 
+Requirement: 판매 상품을 등록한 회원은 자신이 등록한 상품의 list를 조회할 수 있다.
+Use Case: 판매상품 list 조회
+Func/Non-Func: Functional
+Actor: 회원
+
+
+// 상품 정보 검색 및 상품 구매 기능
+[1] 
+Requirement: 회원은 사고자 하는 상품의 상품명을 검색할 수 있다.
+Use Case: 상품 검색
+Func/Non-Func: Functional
+Actor: 회원
+
+[2]
+Requirement: 회원은 검색된 상품명에 대한 상세 정보를 확인할 수 있다.
+Use Case: 상품 검색
+Func/Non-Func: Functional
+Actor: 회원 
+
+[3]
+Requirement: 회원은 검색한 상품을 구매할 수 있다. 
+Use Case: 상품구매
+Func/Non-Func: Functional
+Actor: 회원
