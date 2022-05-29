@@ -1,4 +1,5 @@
 #include <iostream>
+#include "Member.h"
 using namespace std;
 
 #define INPUT_FILE_NAME "input.txt"
@@ -6,6 +7,11 @@ using namespace std;
 
 void doTask();
 void program_exit();
+
+int wholeMemberNum=0;
+Member * wholeMemberArr[100];
+int wholeProductNum=0;
+Product * wholeProductArr[100];
 
 FILE* in_fp, *out_fp;
 
