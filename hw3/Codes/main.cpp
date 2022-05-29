@@ -33,7 +33,9 @@ void doTask() {
             // 1.1. 회원가입
             case 1:
               {
-                
+                // 예시
+                // SignUpControlClass c = new SignUpControlClass(); // 그리고 이 컨트롤 클래스의 생성자 내에서 바운더리 클래스를 new해서 생성
+                // SignUpBoundaryClass::inputMemDetails(여기에 인풋 넘겨줌); //그리고 이 바운더리 클래스에서 컨트롤 클래스로 넘겨주고 컨트롤 클래스에서 로직 실행.
               }
             // 1.2. 회원탈퇴
             case 2:
