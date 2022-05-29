@@ -2,7 +2,7 @@
 
 using namespace std;
 
-// 멤
+// 멤버 엔티티 클래스
 class Member
 {
 private:
