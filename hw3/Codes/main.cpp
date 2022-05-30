@@ -1,9 +1,9 @@
 #include <iostream>
 #include <fstream>
-#include <cstdio>
 #include "comm.h"
 #include "entities/Member.h"
 #include "entities/Product.h"
+#include "history_subsystem/ViewSoldHistory.h"
 using namespace std;
 
 void doTask();
@@ -47,7 +47,11 @@ void doTask()
       case 1:
       {
         cout << "회원가입";
-        fout << "회원가입";
+        wholeMemberArr[0] = new Member("hs", "1234", "이한슬", "2202-1111");
+        wholeProductArr[0] = new Product("새우깡", "농심", 1000, 0);
+        wholeMemberArr[0]->getProductCollection()->addSoldProduct(*(wholeProductArr[0]));
+
+        // wholeMemberNum++;
       }
       // 1.2. 회원탈퇴
       case 2:
@@ -78,7 +82,6 @@ void doTask()
       // 3.1. 판매 의류 등록
       case 1:
       {
-        //판매의류등록테스트코드
       }
       // 3.2. 등록 상품 조회
       case 2:
@@ -87,7 +90,8 @@ void doTask()
       // 3.3. 판매 완료 상품 조회
       case 3:
       {
-      };
+        ViewSoldHistory *viewSoldHistory = new ViewSoldHistory(wholeMemberArr[0]);
+      }
       }
     }
     // 4. 상품 구매 관리

@@ -27,11 +27,11 @@ public:
     this->leftNum = leftNum;
   }
   Product getProductDetails() { return *this; } // 판매중인 상품 리스트 가져오기
-  string getProductName();
-  string getCompanyName();
-  int getPrice();
-  int getSalesNum();
-  float getAvgPurchaseEvaluation();
+  string getProductName() { return this->productName; }
+  string getCompanyName() { return this->companyName; }
+  int getPrice() { return this->price; }
+  int getSalesNum() { return this->salesNum; }
+  float getAvgPurchaseEvaluation() { return this->avgPurchaseEvaluation; }
   float calAvgPurchaseEvaluation(string productName, int purchaseEvaluation); // 판매한 상품들 리스트 가져오기
 };
 
