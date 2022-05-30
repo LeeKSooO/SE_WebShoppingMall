@@ -2,8 +2,10 @@
 #include <fstream>
 #include "comm.h"
 #include "entities/Member.h"
+#include "entities/Order.h"
 #include "entities/Product.h"
 #include "history_subsystem/ViewSoldHistory.h"
+#include "history_subsystem/ViewPurchaseHistory.h"
 using namespace std;
 
 void doTask();
@@ -13,6 +15,8 @@ int wholeMemberNum = 0;
 Member *wholeMemberArr[WHOLE_MEM_NUM];
 int wholeProductNum = 0;
 Product *wholeProductArr[WHOLE_PRODUCT_NUM];
+int wholeOrderNum = 0;
+Order *wholeOrderArr[WHOLE_ORDER_NUM];
 
 int main()
 {
@@ -29,12 +33,11 @@ void doTask()
   string str;
 
   ifstream fin("input.txt");
-  ofstream fout("output.txt");
 
-  while (!isProgramExit)
+  while (!isProgramExit && fin.is_open())
   {
     fin >> menuLevel1 >> menuLevel2;
-    cout << menuLevel1 << " " << menuLevel1 << endl;
+    cout << menuLevel1 << " " << menuLevel2 << endl;
 
     switch (menuLevel1)
     {
@@ -48,9 +51,13 @@ void doTask()
       {
         cout << "회원가입";
         wholeMemberArr[0] = new Member("hs", "1234", "이한슬", "2202-1111");
-        wholeProductArr[0] = new Product("새우깡", "농심", 1000, 0);
-        wholeMemberArr[0]->getProductCollection()->addSoldProduct(*(wholeProductArr[0]));
+        wholeProductArr[1] = new Product("hs", "새우깡", "농심", 1000, 0);
+        wholeProductArr[1] = new Product("hs", "감자깡", "농담", 2000, 0);
 
+        wholeOrderArr[0] = new Order("새우깡", (wholeProductArr[1]));
+        wholeMemberArr[0]->getProductCollection()->addSoldProduct(*(wholeProductArr[0]));
+        // wholeMemberArr[0]->getOrderCollection()->createOrder((wholeOrderArr[0]));
+        break;
         // wholeMemberNum++;
       }
       // 1.2. 회원탈퇴
@@ -91,6 +98,7 @@ void doTask()
       case 3:
       {
         ViewSoldHistory *viewSoldHistory = new ViewSoldHistory(wholeMemberArr[0]);
+        break;
       }
       }
     }
@@ -110,6 +118,9 @@ void doTask()
       // 4.3. 상품 구매 내역 조회
       case 3:
       {
+        // ViewPurchaseHistory *viewPurchaseHistory = new ViewPurchaseHistory(wholeMemberArr[0], *wholeOrderArr);
+        ViewPurchaseHistory *viewPurchaseHistory = new ViewPurchaseHistory(wholeMemberArr[0]);
+        break;
       }
       // 4.4. 상품 구매만족도 평가
       case 4:
@@ -137,6 +148,7 @@ void doTask()
       case 1:
       {
         // program_exit();
+        fin.close();
         isProgramExit = 1;
         break;
       }

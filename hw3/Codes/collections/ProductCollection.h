@@ -12,14 +12,15 @@ class ProductCollection
 {
 private:
   int numSoldProducts = 0;
-  Product *soldProducts[100]; // 판매 완료 상품 포인터 배열
+  Product *soldProducts[100] = {}; // 판매 완료 상품 포인터 배열
 
 public:
   Product **getSoldProducts()
   {
-    return soldProducts;
+    return this->soldProducts;
   } // 판매 완료 상품 포인터 배열 가져오기
   int getNumSoldProducts() { return this->numSoldProducts; }
+  int setNumSoldProducts(int newNumSoldProducts) { return this->numSoldProducts = newNumSoldProducts; }
   void addSoldProduct(Product product)
   {
     this->soldProducts[(this->numSoldProducts)++] = &product;

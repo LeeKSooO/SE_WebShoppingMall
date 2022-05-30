@@ -10,7 +10,7 @@ using namespace std;
 class Product
 {
 private:
-  string productId;   //
+  string sellerId;
   string productName; //
   string companyName;
   int price;
@@ -19,13 +19,15 @@ private:
   int salesNum;
 
 public:
-  Product(string productName, string companyName, int price, int leftNum)
+  Product(string sellerId, string productName, string companyName, int price, int leftNum)
   {
+    this->sellerId = sellerId;
     this->productName = productName;
     this->companyName = companyName;
     this->price = price;
     this->leftNum = leftNum;
   }
+  string getSellerId() { return this->sellerId; };
   Product getProductDetails() { return *this; } // 판매중인 상품 리스트 가져오기
   string getProductName() { return this->productName; }
   string getCompanyName() { return this->companyName; }

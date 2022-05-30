@@ -1,6 +1,7 @@
 #include <iostream>
 #include "../entities/Product.h"
 #include "../entities/Member.h"
+#include "../collections/ProductCollection.h"
 #include "ViewSoldHistoryUI.h"
 
 using namespace std;
