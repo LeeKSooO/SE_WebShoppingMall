@@ -3,7 +3,9 @@
 #include "comm.h"
 #include "entities/Member.h"
 #include "entities/Product.h"
+#include "entities/Order.h"
 #include "history_subsystem/ViewSoldHistory.h"
+#include "history_subsystem/ViewPurchaseHistory.h"
 using namespace std;
 
 void doTask();
@@ -13,6 +15,8 @@ int wholeMemberNum = 0;
 Member *wholeMemberArr[WHOLE_MEM_NUM];
 int wholeProductNum = 0;
 Product *wholeProductArr[WHOLE_PRODUCT_NUM];
+int wholeOrderNum = 0;
+Order *wholeOrderArr[WHOLE_ORDER_NUM];
 
 int main()
 {
@@ -48,8 +52,12 @@ void doTask()
       {
         cout << "회원가입";
         wholeMemberArr[0] = new Member("hs", "1234", "이한슬", "2202-1111");
-        wholeProductArr[0] = new Product("새우깡", "농심", 1000, 0);
+        wholeProductArr[0] = new Product("hs", "새우깡", "농심", 1000, 0);
+        wholeProductArr[1] = new Product("hs", "감자깡", "농담", 1000, 10);
         wholeMemberArr[0]->getProductCollection()->addSoldProduct(*(wholeProductArr[0]));
+
+        wholeOrderArr[0] = new Order("감자깡", wholeProductArr[1]);
+        wholeMemberArr[0]->getOrderCollection()->addOrder(*(wholeOrderArr[0]));
 
         // wholeMemberNum++;
       }
@@ -110,6 +118,7 @@ void doTask()
       // 4.3. 상품 구매 내역 조회
       case 3:
       {
+        ViewPurchaseHistory *viewPurchaseHistory = new ViewPurchaseHistory(wholeMemberArr[0]);
       }
       // 4.4. 상품 구매만족도 평가
       case 4:
