@@ -12,11 +12,16 @@ private:
 	string residentRegistrationNum;
 
 public:
+	Member(string, string, string, string);
 	void listProductsOnSale(); // 판매중인 상품 리스트 가져오기
 	void listSoldProducts();   // 판매한 상품들 리스트 가져오기
 	void listOrders();
-	void deleteMember();
-	void checkidpw();
-	void createNewMember();
+	string deleteMember(Member*);
+	Member checkIdPw(string, string);
+	void createNewMember(Member*);
 	void registerProduct();
+	string getMemberName();
+	string getMemberRrn();
+	string getMemberId();
+	string getMemberPw();
 };

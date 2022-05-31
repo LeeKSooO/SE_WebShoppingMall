@@ -1,6 +1,15 @@
 #include <iostream>
 #include <fstream>
-#include "Member.h"
+#include "Entities/Member.h"
+#include "member_subsystem/LogIn.h"
+#include "member_subsystem/LogInUI.h"
+#include "member_subsystem/LogOut.h"
+#include "member_subsystem/LogOutUI.h"
+#include "member_subsystem/SignUp.h"
+#include "member_subsystem/SignUpUI.h"
+#include "member_subsystem/Withdraw.h"
+#include "member_subsystem/WithdrawUI.h"
+
 using namespace std;
 
 void doTask();
@@ -9,10 +18,13 @@ void program_exit();
 #define WHOLE_MEM_NUM 100
 #define WHOLE_PRODUCT_NUM 1000
 
-int wholeMemberNum = 0;
-Member *wholeMemberArr[WHOLE_MEM_NUM];
-int wholeProductNum = 0;
+extern int wholeMemberNum = 0;
+extern Member *wholeMemberArr[WHOLE_MEM_NUM];
+extern int wholeProductNum = 0;
+extern Member *nowLogIn;
 // Product *wholeProductArr[WHOLE_PRODUCT_NUM]; 오류나서 주석처리 해놓음
+
+Member *nowLogIn;
 
 int main()
 {
@@ -46,12 +58,17 @@ void doTask()
       // 1.1. 회원가입
       case 1:
       {
-        cout << "회원가입";
-        fout << "회원가입";
+        string name;
+        string rRN;
+        string Id;
+        string Pw;
+        fin >> name >> rRN >> Id >> Pw;
+        SignUp *si = new SignUp(name, rRN, Id, Pw);
       }
       // 1.2. 회원탈퇴
       case 2:
       {
+        Withdraw *wd = new Withdraw(nowLogIn);
       }
       }
     }
@@ -63,10 +80,15 @@ void doTask()
       // 2.1. 로그인
       case 1:
       {
+        string memberId;
+        string memberPw;
+        fin >> memberId >> memberPw;
+        LogIn *li = new LogIn(memberId, memberPw);
       }
       // 2.2. 로그아웃
       case 2:
       {
+        LogOut *lo = new LogOut(nowLogIn);
       }
       }
     }
