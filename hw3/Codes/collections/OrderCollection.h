@@ -20,9 +20,9 @@ public:
         return orders;
     }
     int getNumOrders() { return this->numOrders; }
-    void addOrder(Order order)
+    void addOrder(Order *order)
     {
-        this->orders[(this->numOrders)++] = &order;
+        this->orders[(this->numOrders)++] = order;
     }
 };
 

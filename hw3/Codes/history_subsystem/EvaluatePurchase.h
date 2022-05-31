@@ -35,12 +35,15 @@ public:
 		{
 			if (orderList[i]->getProductName() == productName)
 			{
-				orderList[i]->setPurchaseEvaluation(purchaseEvaluation);
+				savePurchaseEvaluation(orderList[i], purchaseEvaluation);
 				ui->outputInterface(orderList[i]);
 			}
 		}
 	}
-	void savePurchaseEvaluation(string productName, int purchaseEvaluation);
+	void savePurchaseEvaluation(Order *order, int purchaseEvaluation)
+	{
+		order->setPurchaseEvaluation(purchaseEvaluation);
+	}
 };
 
 #endif

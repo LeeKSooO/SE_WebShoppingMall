@@ -13,7 +13,7 @@ class Order
 private:
     string sellerId;
     string productName;
-    int purchaseEvaluation = -1;
+    int purchaseEvaluation;
     Product *product;
 
 public:
@@ -22,6 +22,7 @@ public:
         this->sellerId = sellerId;
         this->productName = productName;
         this->product = product;
+        purchaseEvaluation = 0;
     }
     string getSellerId() { return this->sellerId; }
     string getProductName() { return this->productName; }

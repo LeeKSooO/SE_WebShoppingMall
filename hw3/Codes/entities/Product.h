@@ -41,7 +41,7 @@ public:
     (this->leftNum)--;
   }
   float getAvgPurchaseEvaluation() { return this->avgPurchaseEvaluation; }
-  float calAvgPurchaseEvaluation(string productName, int purchaseEvaluation); // 판매한 상품들 리스트 가져오기
+  // float calAvgPurchaseEvaluation(string productName, int purchaseEvaluation); // 판매한 상품들 리스트 가져오기
 };
 
 #endif

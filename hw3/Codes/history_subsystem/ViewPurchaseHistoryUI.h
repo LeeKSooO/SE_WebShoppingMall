@@ -25,11 +25,11 @@ public:
         string pname = product->getProductName();
         string cname = product->getCompanyName();
         int price = product->getPrice();
-        int leftNum = product->getLeftNum();
+        int salesNum = product->getSalesNum();
         // TODO: 평균 구매만족도
 
         ofstream fout("output.txt", ios::app);
-        fout << "> " << sellerId << " " << pname << " " << cname << " " << price << " " << leftNum << "\n";
+        fout << "> " << sellerId << " " << pname << " " << cname << " " << price << " " << salesNum << "\n";
         fout.close();
     }
     void printEndl()

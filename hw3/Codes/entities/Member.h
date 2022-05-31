@@ -22,7 +22,7 @@ private:
 public:
 	Member(string memberId, string memberPw, string memberName, string residentRegistrationNum)
 	{
-		this->memberName = memberName;
+		this->memberId = memberId;
 		this->memberPw = memberPw;
 		this->memberName = memberName;
 		this->residentRegistrationNum = residentRegistrationNum;
@@ -31,6 +31,7 @@ public:
 		OrderCollection *o = new OrderCollection();
 		this->orderCollection = o;
 	};
+	string getMemberId() { return this->memberId; }
 	void listProductsOnSale();						// 판매중인 상품 리스트 가져오기
 	Product *listSoldProducts(ProductCollection *); // 판매한 상품들 리스트 가져오기
 	Order *listOrders(OrderCollection *);

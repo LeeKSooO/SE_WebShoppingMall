@@ -29,7 +29,7 @@ public:
         int purchaseEvaluation = order->getPurchaseEvaluation();
 
         ofstream fout("output.txt", ios::app);
-        fout << "4.4. 상품 구매만독도 평가\n> " << sellerId << " " << productName << " " << purchaseEvaluation << "\n\n";
+        fout << "4.4. 상품 구매만족도 평가\n> " << sellerId << " " << productName << " " << purchaseEvaluation << "\n\n";
         fout.close();
     }
 };

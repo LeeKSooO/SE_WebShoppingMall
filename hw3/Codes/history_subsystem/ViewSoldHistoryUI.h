@@ -26,8 +26,11 @@ public:
         int price = product->getPrice();
         int salesNum = product->getSalesNum();
 
+        //테스트용
+        int leftNum = product->getLeftNum();
+
         ofstream fout("output.txt", ios::app);
-        fout << "> " << pname << " " << cname << " " << price << " " << salesNum << "\n";
+        fout << "> " << pname << " " << cname << " " << price << " " << salesNum << " " << leftNum << "\n";
         fout.close();
     }
     void printEndl()

@@ -20,9 +20,9 @@ public:
     return soldProducts;
   } // 판매 완료 상품 포인터 배열 가져오기
   int getNumSoldProducts() { return this->numSoldProducts; }
-  void addSoldProduct(Product product)
+  void addSoldProduct(Product *product)
   {
-    this->soldProducts[(this->numSoldProducts)++] = &product;
+    this->soldProducts[(this->numSoldProducts)++] = product;
   }
 };
 

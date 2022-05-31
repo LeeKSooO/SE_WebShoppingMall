@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <math.h>
 #include "comm.h"
 #include "entities/Member.h"
 #include "entities/Product.h"
@@ -8,16 +9,17 @@
 #include "history_subsystem/ViewSoldHistory.h"
 #include "history_subsystem/ViewPurchaseHistory.h"
 #include "history_subsystem/EvaluatePurchase.h"
+#include "history_subsystem/PrintSalesStatics.h"
 using namespace std;
 
 void doTask();
 void program_exit();
 
-int wholeMemberNum = 0;
+// int wholeMemberNum = 0;
 Member *wholeMemberArr[WHOLE_MEM_NUM];
-int wholeProductNum = 0;
+// int wholeProductNum = 0;
 Product *wholeProductArr[WHOLE_PRODUCT_NUM];
-int wholeOrderNum = 0;
+// int wholeOrderNum = 0;
 Order *wholeOrderArr[WHOLE_ORDER_NUM];
 
 int main()
@@ -52,15 +54,25 @@ void doTask()
       case 1:
       {
         cout << "1.1. 회원가입\n";
-        wholeMemberArr[0] = new Member("hs", "1234", "이한슬", "2202-1111");
-        wholeProductArr[0] = new Product("hs", "새우깡", "농심", 1000, 0);
-        wholeProductArr[1] = new Product("hs", "감자깡", "농담", 1000, 1);
-        wholeMemberArr[0]->getProductCollection()->addSoldProduct(*(wholeProductArr[0]));
+        wholeMemberArr[wholeMemberNum++] = new Member("hs", "1234", "이한슬", "2202-1111");
+        wholeProductArr[wholeProductNum++] = new Product("hs", "새우깡", "농심", 1000, 1);
+        wholeProductArr[wholeProductNum++] = new Product("hs", "감자깡", "농담", 1500, 1);
+        wholeProductArr[wholeProductNum++] = new Product("hs", "오징어집", "빙그레", 2000, 1);
+        wholeMemberArr[0]->getProductCollection()->addSoldProduct(wholeProductArr[0]);
+        wholeMemberArr[0]->getProductCollection()->addSoldProduct(wholeProductArr[1]);
+        wholeMemberArr[0]->getProductCollection()->addSoldProduct(wholeProductArr[2]);
 
         // 하나 구매했다 가정
-        wholeOrderArr[0] = new Order("hs", "감자깡", wholeProductArr[1]);
+        wholeOrderArr[wholeOrderNum++] = new Order("hs", "감자깡", wholeProductArr[1]);
+        wholeOrderArr[wholeOrderNum++] = new Order("hs", "오징어집", wholeProductArr[2]);
+        wholeOrderArr[wholeOrderNum++] = new Order("hs", "새우깡", wholeProductArr[0]);
         wholeProductArr[1]->increaseSalesNumAndDecreaseLeftNum();
-        wholeMemberArr[0]->getOrderCollection()->addOrder(*(wholeOrderArr[0]));
+        wholeProductArr[2]->increaseSalesNumAndDecreaseLeftNum();
+        wholeProductArr[0]->increaseSalesNumAndDecreaseLeftNum();
+        wholeMemberArr[0]->getOrderCollection()->addOrder(wholeOrderArr[0]);
+        wholeMemberArr[0]->getOrderCollection()->addOrder(wholeOrderArr[1]);
+        wholeMemberArr[0]->getOrderCollection()->addOrder(wholeOrderArr[2]);
+
         // wholeMemberArr[0]->getProductCollection()->addSoldProduct(*(wholeProductArr[1]));
         break;
 
@@ -146,8 +158,6 @@ void doTask()
         string productName;
         int purchaseEvaluation;
         fin >> productName >> purchaseEvaluation;
-        cout << productName << " " << purchaseEvaluation << "\n";
-
         EvaluatePurchase *evaluatePurchase = new EvaluatePurchase(wholeMemberArr[0], productName, purchaseEvaluation);
         break;
       }
@@ -162,6 +172,8 @@ void doTask()
       // 5.1. 판매 상품 통계
       case 1:
       {
+        cout << "5.1. 판매 상품 통계\n";
+        PrintSalesStatics *printSalesStatics = new PrintSalesStatics(wholeMemberArr[0]);
         break;
       }
       }
@@ -176,7 +188,7 @@ void doTask()
       case 1:
       {
         cout << "6.1. 종료\n";
-        // program_exit();
+        program_exit();
         isProgramExit = 1;
         break;
       }
@@ -189,9 +201,29 @@ void doTask()
   return;
 }
 
-// void program_exit()
-// {
-//   // 뭐넣어야되지..?
+void program_exit()
+{
+  ofstream fout("output.txt", ios::app);
+  fout << "6.1. 종료\n";
+  fout.close();
 
-//   return;
-// }
+  return;
+}
+
+float calAvgPurchaseEvaluation(string sellerId, string productName)
+{
+  int sum = 0;
+  int numPurchaseEvaluation = 0;
+  for (int i = 0; i < wholeOrderNum; i++)
+  {
+    int purchaseEvaluation = (*wholeOrderArr[i]).getPurchaseEvaluation();
+    if (((*wholeOrderArr[i]).getSellerId() == sellerId) && ((*wholeOrderArr[i]).getProductName() == productName))
+    {
+      sum += purchaseEvaluation;
+      numPurchaseEvaluation++;
+    }
+  }
+  cout << "sum: " << sum << " numPurchaseEvaluation: " << numPurchaseEvaluation << endl;
+  float result = (float)sum / numPurchaseEvaluation;
+  return round(result);
+}
