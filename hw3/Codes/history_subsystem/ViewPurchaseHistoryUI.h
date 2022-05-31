@@ -22,8 +22,8 @@ public:
         int salesNum = product->getSalesNum();
         // TODO: 평균 구매만족도
 
-        ofstream fout("output.txt");
-        fout << sellerId << " " << pname << " " << cname << " " << price << " " << salesNum << "\n";
+        ofstream fout("output.txt", ios::app);
+        fout << "4.3. 상품 구매 내역 조회\n> " << sellerId << " " << pname << " " << cname << " " << price << " " << salesNum << "\n\n";
         fout.close();
     }
 };

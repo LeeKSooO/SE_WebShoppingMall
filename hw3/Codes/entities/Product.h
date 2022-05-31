@@ -22,6 +22,7 @@ private:
 public:
   Product(string sellerId, string productName, string companyName, int price, int leftNum)
   {
+    this->sellerId = sellerId;
     this->productName = productName;
     this->companyName = companyName;
     this->price = price;

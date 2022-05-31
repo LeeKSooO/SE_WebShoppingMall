@@ -20,8 +20,8 @@ public:
         int price = product->getPrice();
         int salesNum = product->getSalesNum();
 
-        ofstream fout("output.txt");
-        fout << pname << " " << cname << " " << price << " " << salesNum << "\n";
+        ofstream fout("output.txt", ios::app);
+        fout << "3.3. 판매 완료 상품 조회\n> " << pname << " " << cname << " " << price << " " << salesNum << "\n\n";
         fout.close();
     }
 };
