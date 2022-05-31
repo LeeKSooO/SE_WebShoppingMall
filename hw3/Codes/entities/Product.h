@@ -16,8 +16,8 @@ private:
   string companyName;
   int price;
   float avgPurchaseEvaluation;
-  int leftNum;
   int salesNum;
+  int leftNum;
 
 public:
   Product(string sellerId, string productName, string companyName, int price, int leftNum)
@@ -34,6 +34,12 @@ public:
   string getCompanyName() { return this->companyName; }
   int getPrice() { return this->price; }
   int getSalesNum() { return this->salesNum; }
+  int getLeftNum() { return this->leftNum; }
+  void increaseSalesNumAndDecreaseLeftNum()
+  {
+    (this->salesNum)++;
+    (this->leftNum)--;
+  }
   float getAvgPurchaseEvaluation() { return this->avgPurchaseEvaluation; }
   float calAvgPurchaseEvaluation(string productName, int purchaseEvaluation); // 판매한 상품들 리스트 가져오기
 };

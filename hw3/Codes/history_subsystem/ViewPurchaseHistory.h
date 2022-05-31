@@ -26,10 +26,14 @@ public:
 
 		ViewPurchaseHistoryUI *ui = new ViewPurchaseHistoryUI();
 
+		ui->printTitle();
+
 		for (int i = 0; i < num; i++)
 		{
 			ui->printLine(orderList[i]->getProduct());
 		}
+
+		ui->printEndl();
 	}
 };
 

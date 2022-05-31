@@ -13,6 +13,12 @@ class ViewSoldHistoryUI
 private:
 public:
     void startInterface(Product soldProudcts[]);
+    void printTitle()
+    {
+        ofstream fout("output.txt", ios::app);
+        fout << "3.3. 판매 완료 상품 조회\n";
+        fout.close();
+    }
     void printLine(Product *product)
     {
         string pname = product->getProductName();
@@ -21,7 +27,13 @@ public:
         int salesNum = product->getSalesNum();
 
         ofstream fout("output.txt", ios::app);
-        fout << "3.3. 판매 완료 상품 조회\n> " << pname << " " << cname << " " << price << " " << salesNum << "\n\n";
+        fout << "> " << pname << " " << cname << " " << price << " " << salesNum << "\n";
+        fout.close();
+    }
+    void printEndl()
+    {
+        ofstream fout("output.txt", ios::app);
+        fout << "\n";
         fout.close();
     }
 };

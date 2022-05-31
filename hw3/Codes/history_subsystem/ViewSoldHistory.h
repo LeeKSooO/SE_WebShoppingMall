@@ -25,10 +25,14 @@ public:
 
 		ViewSoldHistoryUI *ui = new ViewSoldHistoryUI();
 
+		ui->printTitle();
+
 		for (int i = 0; i < num; i++)
 		{
 			ui->printLine(soldProductList[i]);
 		}
+
+		ui->printEndl();
 	}
 };
 
