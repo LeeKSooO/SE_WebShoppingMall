@@ -1,6 +1,7 @@
 
 #include <iostream>
 #include <fstream>
+#include "../comm.h"
 #include "../entities/Member.h"
 #include "SignUpUI.h"
 #pragma once
@@ -23,15 +24,20 @@ public:
         SignUpUI *ui = new SignUpUI();
         Member *newMem = new Member(name, rRN, Id, Pw);
 
-        createNewMember(newMem);
+        wholeMemberArr[wholeMemberNum] = newMem;
+        wholeMemberNum++;
+
+        // createNewMember(newMem);
 
         ui->printMemberInfo(newMem);
     }
     // void createNewMember(Member *);
-    void createNewMember(Member *member)
-    {
-        (this->wholeMemberArr)[wholeMemberNum++] = member;
-    }
+    // void createNewMember(Member *member)
+    // {
+    //     cout << "createNewMember: " << wholeMemberNum << endl;
+    //     (this->wholeMemberArr)[wholeMemberNum] = member;
+    //     wholeMemberNum++;
+    // }
 };
 
 // void SignUp::createNewMember(Member *member)

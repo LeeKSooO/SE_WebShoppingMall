@@ -24,7 +24,7 @@ Member *wholeMemberArr[WHOLE_MEM_NUM];
 Product *wholeProductArr[WHOLE_PRODUCT_NUM];
 Order *wholeOrderArr[WHOLE_ORDER_NUM];
 // login 한 멤버 저장
-Member *nowLogIn;
+// Member nowLogIn;
 
 int main()
 {
@@ -63,13 +63,14 @@ void doTask()
         string Id;
         string Pw;
         fin >> name >> rRN >> Id >> Pw;
+        // fout << name << rRN << Id << Pw << endl;
         SignUp *si = new SignUp(wholeMemberArr, name, rRN, Id, Pw);
         break;
       }
       // 1.2. 회원탈퇴
       case 2:
       {
-        Withdraw *wd = new Withdraw(wholeMemberArr, nowLogIn);
+        Withdraw *wd = new Withdraw(wholeMemberArr, wholeMemberArr[wholeMemIndex]);
         break;
       }
       }
@@ -86,13 +87,14 @@ void doTask()
         string memberId;
         string memberPw;
         fin >> memberId >> memberPw;
-        LogIn *li = new LogIn(wholeMemberArr, nowLogIn, memberId, memberPw);
+        cout << "2.1. 로그인 " << memberId << " " << memberPw << endl;
+        LogIn *li = new LogIn(wholeMemberArr, memberId, memberPw);
         break;
       }
       // 2.2. 로그아웃
       case 2:
       {
-        LogOut *lo = new LogOut(nowLogIn);
+        LogOut *lo = new LogOut(wholeMemberArr[wholeMemIndex]);
         break;
       }
       }
@@ -117,7 +119,7 @@ void doTask()
       case 3:
       {
         cout << "3.3. 판매 완료 상품 조회\n";
-        ViewSoldHistory *viewSoldHistory = new ViewSoldHistory(nowLogIn);
+        ViewSoldHistory *viewSoldHistory = new ViewSoldHistory(wholeMemberArr[wholeMemIndex]);
         break;
       }
       }
@@ -142,7 +144,7 @@ void doTask()
       case 3:
       {
         cout << "4.3. 상품 구매 내역 조회\n";
-        ViewPurchaseHistory *viewPurchaseHistory = new ViewPurchaseHistory(nowLogIn);
+        ViewPurchaseHistory *viewPurchaseHistory = new ViewPurchaseHistory(wholeMemberArr[wholeMemIndex]);
         break;
       }
       // 4.4. 상품 구매만족도 평가
@@ -152,7 +154,7 @@ void doTask()
         string productName;
         int purchaseEvaluation;
         fin >> productName >> purchaseEvaluation;
-        EvaluatePurchase *evaluatePurchase = new EvaluatePurchase(wholeMemberArr[0], productName, purchaseEvaluation);
+        EvaluatePurchase *evaluatePurchase = new EvaluatePurchase(wholeMemberArr[wholeMemIndex], productName, purchaseEvaluation);
         break;
       }
       }
@@ -167,7 +169,7 @@ void doTask()
       case 1:
       {
         cout << "5.1. 판매 상품 통계\n";
-        PrintSalesStatics *printSalesStatics = new PrintSalesStatics(nowLogIn);
+        PrintSalesStatics *printSalesStatics = new PrintSalesStatics(wholeMemberArr[wholeMemIndex]);
         break;
       }
       }

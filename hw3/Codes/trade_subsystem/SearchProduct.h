@@ -2,17 +2,19 @@
 #include "Product.h"
 #include "SearchProductUI.h"
 
-class SearchProduct {
+class SearchProduct
+{
 private:
-	Product* product;
+	Product *product;
 	string pName;
+
 public:
+	SearchProduct(Product **wholeProductArr)
+	{
 
-	SearchProduct(Product** wholeProductArr) {
-
-		//control class¿¡¼­ »óÇ°¸í fin
+		// control classï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ç°ï¿½ï¿½ fin
 		string pName = "hat";
-		SearchProductUI* ui = new SearchProductUI(wholeProductArr, pName);
+		SearchProductUI *ui = new SearchProductUI(wholeProductArr, pName);
 
 		/*
 		for (int i = 0; i < (sizeof(wholeProductArr) / sizeof(Product*)); i++) {
@@ -22,10 +24,10 @@ public:
 			}
 		}
 		*/
-		//ui->search();
-		//ui->startInterface();
+		// ui->search();
+		// ui->startInterface();
 	}
 
-	//Product* searchProductName(Product** wholeProductArr, string productName);
+	// Product* searchProductName(Product** wholeProductArr, string productName);
 	void get();
 };

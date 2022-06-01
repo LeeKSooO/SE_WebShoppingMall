@@ -7,7 +7,7 @@
 
 using namespace std;
 
-Member::Member(string newMemberId, string newMemberPw, string newMemberName, string newResidentRegistrationNum)
+Member::Member(string newMemberName, string newResidentRegistrationNum, string newMemberId, string newMemberPw)
 {
    numSoldProducts = 0;
    memberId = newMemberId;
