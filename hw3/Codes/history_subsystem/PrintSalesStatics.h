@@ -28,12 +28,13 @@ public:
 
 		ui->printTitle();
 
-		for (int i = 0; i < num; i++)
-		{
-			int totalPrice = calTotalPrice(soldProductList[i]->getPrice(), soldProductList[i]->getSalesNum());
-			float avgPurchaseEvaluation = calAvgPurchaseEvaluation(member->getMemberId(), soldProductList[i]->getProductName());
-			ui->printLine(soldProductList[i]->getProductName(), totalPrice, avgPurchaseEvaluation);
-		}
+		if (num > 0)
+			for (int i = 0; i < num; i++)
+			{
+				int totalPrice = calTotalPrice(soldProductList[i]->getPrice(), soldProductList[i]->getSalesNum());
+				float avgPurchaseEvaluation = calAvgPurchaseEvaluation(member->getMemberId(), soldProductList[i]->getProductName());
+				ui->printLine(soldProductList[i]->getProductName(), totalPrice, avgPurchaseEvaluation);
+			}
 
 		ui->printEndl();
 	}

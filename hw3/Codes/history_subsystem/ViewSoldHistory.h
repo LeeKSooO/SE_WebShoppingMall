@@ -27,10 +27,11 @@ public:
 
 		ui->printTitle();
 
-		for (int i = 0; i < num; i++)
-		{
-			ui->printLine(soldProductList[i]);
-		}
+		if (num > 0)
+			for (int i = 0; i < num; i++)
+			{
+				ui->printLine(soldProductList[i]);
+			}
 
 		ui->printEndl();
 	}

@@ -22,6 +22,13 @@ public:
         return make_tuple(productName, purchaseEvaluation);
     }
 
+    void printTitle()
+    {
+        ofstream fout("output.txt", ios::app);
+        fout << "4.4. 상품 구매만족도 평가\n";
+        fout.close();
+    }
+
     void outputInterface(Order *order)
     {
         string sellerId = order->getSellerId();
@@ -29,7 +36,13 @@ public:
         int purchaseEvaluation = order->getPurchaseEvaluation();
 
         ofstream fout("output.txt", ios::app);
-        fout << "4.4. 상품 구매만족도 평가\n> " << sellerId << " " << productName << " " << purchaseEvaluation << "\n\n";
+        fout << "> " << sellerId << " " << productName << " " << purchaseEvaluation << "\n";
+        fout.close();
+    }
+    void printEndl()
+    {
+        ofstream fout("output.txt", ios::app);
+        fout << "\n";
         fout.close();
     }
 };
