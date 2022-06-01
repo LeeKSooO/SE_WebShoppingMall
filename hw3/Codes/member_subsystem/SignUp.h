@@ -1,5 +1,4 @@
 #pragma once
-#include"Member.h"
 #include"SignUpUI.h"
 
 using namespace std;

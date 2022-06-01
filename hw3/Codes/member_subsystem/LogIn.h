@@ -1,5 +1,4 @@
 #pragma once
-#include"Member.h"
 #include"LogInUI.h"
 
 class LogIn {
@@ -11,7 +10,7 @@ public:
         Member* mb = new Member("", "", memberId, memberPw);
         bool logInYes = false;
         logInYes = mb->checkIdPw(memberId, memberPw);
-        nowLogIn = mb; // 인수 수정
+        nowLogIn = mb;
 
         if (logInYes) {
             ui->printMemberIdPw(nowLogIn);

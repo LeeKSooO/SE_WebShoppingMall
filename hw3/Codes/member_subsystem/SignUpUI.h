@@ -1,5 +1,4 @@
 #pragma once
-#include <fstream>
 
 class SignUpUI {
 private:
@@ -11,7 +10,7 @@ public:
         string Id = member->getMemberId();
         string Pw = member->getMemberPw();
 
-        fout << "1.1 È¸¿ø°¡ÀÔ" << "\n";
+        fout << "1.1 íšŒì›ê°€ìž…" << "\n";
         fout << "> " << name << " " << rRN << " " << Id << " " << Pw << "\n";
         fout.close();
     }

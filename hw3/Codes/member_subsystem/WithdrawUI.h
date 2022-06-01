@@ -7,7 +7,7 @@ public:
     void printMemberId(string withdrawedId) {
         ofstream fout("output.txt", ios::app);
 
-        fout << "1.2 È¸¿øÅ»Åğ" << "\n";
+        fout << "1.2 íšŒì›íƒˆí‡´" << "\n";
         fout << "> " << withdrawedId << "\n";
         fout.close();
     }
@@ -15,8 +15,8 @@ public:
     void printWithdrawFail() {
         ofstream fout("output.txt", ios::app);
 
-        fout << "1.2 È¸¿øÅ»Åğ" << "\n";
-        fout << "> ÇöÀç ·Î±×ÀÎ »óÅÂ°¡ ¾Æ´Õ´Ï´Ù.\n";
+        fout << "1.2 íšŒì›íƒˆí‡´" << "\n";
+        fout << "> í˜„ì¬ ë¡œê·¸ì¸ ìƒíƒœê°€ ì•„ë‹™ë‹ˆë‹¤.\n";
         fout.close();
     }
 

@@ -1,7 +1,7 @@
 #pragma once
 
 
-// ·Î±×¾Æ¿ô ¹Ù¿î´õ¸® Å¬·¡½º
+// ï¿½Î±×¾Æ¿ï¿½ ï¿½Ù¿ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½
 class LogOutUI {
 private:
 public:
@@ -9,7 +9,7 @@ public:
         ofstream fout("output.txt", ios::app);
         string Id = member->getMemberId();
 
-        fout << "2.2 ·Î±×¾Æ¿ô" << "\n";
+        fout << "2.2 ë¡œê·¸ì•„ì›ƒ" << "\n";
         fout << "> " << Id << "\n";
         fout.close();
     }

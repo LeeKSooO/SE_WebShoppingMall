@@ -1,6 +1,6 @@
 #pragma once
 
-//·Î±×ÀÎ ¹Ù¿î´õ¸® Å¬·¡½º
+//ï¿½Î±ï¿½ï¿½ï¿½ ï¿½Ù¿ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½
 class LogInUI {
 private:
 public:
@@ -8,15 +8,15 @@ public:
         ofstream fout("output.txt", ios::app);
         string Id = member->getMemberId();
         string Pw = member->getMemberPw();
-        fout << "2.1 ·Î±×ÀÎ" << "\n";
+        fout << "2.1 ë¡œê·¸ì¸" << "\n";
         fout << "> " << Id << " " << Pw << "\n";
         fout.close();
     }
 
     void printLogInFail() {
         ofstream fout("output.txt", ios::app);
-        fout << "2.1 ·Î±×ÀÎ\n";
-        fout << "> ÀÏÄ¡ÇÏ´Â ¾ÆÀÌµð¿Í ÆÐ½º¿öµå°¡ ¾ø½À´Ï´Ù.\n";
+        fout << "2.1 ë¡œê·¸ì¸\n";
+        fout << "> ì¼ì¹˜í•˜ëŠ” ì•„ì´ë””ì™€ íŒ¨ìŠ¤ì›Œë“œê°€ ì—†ìŠµë‹ˆë‹¤.\n";
         fout.close();
     }
 

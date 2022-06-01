@@ -11,6 +11,4 @@ public:
         ui->printMemberId(nowLogIn);
         nowLogIn = 0;
     }
-
-
 };
