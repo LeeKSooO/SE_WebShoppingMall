@@ -8,7 +8,6 @@
 #include "SalesProductInquiryUI.h"
 #include "SalesProductInquiry.h"
 #include "SearchProductUI.h"
-#include "SearchProduct.h"
 #include "PurchaseProductUI.h"
 #include "PurchaseProduct.h"
 
@@ -47,8 +46,8 @@ void doTask()
     //Member ks;
     //Member sk;
 
-    ifstream fin("input.txt");
-    ofstream fout("output.txt");
+    ifstream fin("C:\\Users\\rtrt0\\OneDrive\\바탕 화면\\Codes\\input.txt");
+    ofstream fout("C:\\Users\\rtrt0\\OneDrive\\바탕 화면\\Codes\\output.txt");
 
     while (!isProgramExit)
     {
@@ -107,7 +106,7 @@ void doTask()
 
 
                //------test----- 주석처리하기
-               //wholeMemberArr[0]->registerProductInfo(wholeProductArr, productName, companyName, price, salesNum);
+               wholeMemberArr[0]->registerProductInfo(wholeProductArr, productName, companyName, price, salesNum);
                //wholeMemberArr[0]->registerProductInfo(wholeProductArr, productName, companyName, price, salesNum);
                // sk.registerProductInfo(wholeProductArr, productName, companyName, price, salesNum);
 
@@ -124,7 +123,7 @@ void doTask()
             // 3.2. 등록 상품 조회
             case 2:
             {
-                //  wholeMemberArr[0]->listProductsOnSale();
+                  wholeMemberArr[0]->listProductsOnSale();
                 // sk.listProductsOnSale();
 
                 Member* newMem = new Member("sdf", "DSfsdf", "123", "!234");
@@ -145,12 +144,13 @@ void doTask()
                     // 4.1. 상품 정보 검색
                 case 1:
                 {
-                    //SearchProduct* searchProduct = new SearchProduct();
-                    //searchProduct->searchProductName("hat");
+                    //SearchProduct* searchProduct = new SearchProduct(wholeProductArr);
                 }
+
                 // 4.2. 상품 구매
                 case 2:
                 {
+                    //AddProduct* addProduct = new AddProduct(wholeProductArr, productName, companyName, price, salesNum);
                 }
                 // 4.3. 상품 구매 내역 조회
                 case 3:
