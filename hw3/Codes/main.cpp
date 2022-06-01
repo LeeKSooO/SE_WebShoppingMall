@@ -10,6 +10,11 @@
 #include "history_subsystem/ViewPurchaseHistory.h"
 #include "history_subsystem/EvaluatePurchase.h"
 #include "history_subsystem/PrintSalesStatics.h"
+#include "member_subsystem/SignUp.h"
+#include "member_subsystem/LogIn.h"
+#include "member_subsystem/LogOut.h"
+#include "member_subsystem/Withdraw.h"
+
 using namespace std;
 
 void doTask();
@@ -21,6 +26,8 @@ Member *wholeMemberArr[WHOLE_MEM_NUM];
 Product *wholeProductArr[WHOLE_PRODUCT_NUM];
 // int wholeOrderNum = 0;
 Order *wholeOrderArr[WHOLE_ORDER_NUM];
+// login 한 멤버 저장
+Member *nowLogIn;
 
 int main()
 {
