@@ -11,9 +11,9 @@ using namespace std;
 
 #ifndef WHOLE_NUM
 #define WHOLE_NUM
-int wholeMemberNum = 0;
-int wholeProductNum = 0;
-int wholeOrderNum = 0;
+static int wholeMemberNum = 0;
+static int wholeProductNum = 0;
+static int wholeOrderNum = 0;
 #endif
 
 float calAvgPurchaseEvaluation(string, string);

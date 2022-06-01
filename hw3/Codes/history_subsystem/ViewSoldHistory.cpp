@@ -1,23 +1,30 @@
-// #include <iostream>
-// #include "../comm.h"
-// #include "../entities/Product.h"
-// #include "../entities/Member.h"
-// #include "ViewSoldHistory.h"
-// #include "ViewSoldHistoryUI.h"
-// using namespace std;
+#include <iostream>
+#include "../comm.h"
+#include "../entities/Product.h"
+#include "../entities/Member.h"
+#include "ViewSoldHistory.h"
+#include "ViewSoldHistoryUI.h"
+using namespace std;
 
-// ViewSoldHistory::ViewSoldHistory(Member *member)
-// {
-//     ViewSoldHistoryUI *viewSoldHistoryUI = new ViewSoldHistoryUI(this);
-//     int numSoldProducts = member->getNumSoldProducts();
-//     Product *soldProductsPointers = member->listSoldProducts(member->getProductCollection());
-//     Product soldProducts[numSoldProducts];
-//     for (int i = 0; i < numSoldProducts; i++)
-//     {
-//         soldProducts[i] = soldProductsPointers[i]->getProductDetails();
-//     }
-//     viewSoldHistoryUI->startInterface(soldProducts);
-// }
+ViewSoldHistory::ViewSoldHistory(Member *member)
+{
+    // product collection에 호출
+    ProductCollection *p = member->getProductCollection();
+    Product **soldProductList = p->getSoldProducts();
+    int num = p->getNumSoldProducts();
+
+    ViewSoldHistoryUI *ui = new ViewSoldHistoryUI();
+
+    ui->printTitle();
+
+    if (num > 0)
+        for (int i = 0; i < num; i++)
+        {
+            ui->printLine(soldProductList[i]);
+        }
+
+    ui->printEndl();
+}
 
 // void ViewSoldHistoryUI::startInterface(Product *soldProudcts)
 // {

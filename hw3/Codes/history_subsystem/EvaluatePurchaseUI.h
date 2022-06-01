@@ -13,14 +13,14 @@ class EvaluatePurchaseUI
 {
 private:
 public:
-    tuple<string, int> inputPurchaseEvaluation()
-    {
-        string productName;
-        int purchaseEvaluation;
-        ifstream fin("input.txt", ios::app);
-        fin >> productName >> purchaseEvaluation;
-        return make_tuple(productName, purchaseEvaluation);
-    }
+    // tuple<string, int> inputPurchaseEvaluation()
+    // {
+    //     string productName;
+    //     int purchaseEvaluation;
+    //     ifstream fin("input.txt", ios::app);
+    //     fin >> productName >> purchaseEvaluation;
+    //     return make_tuple(productName, purchaseEvaluation);
+    // }
 
     void printTitle()
     {

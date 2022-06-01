@@ -11,10 +11,14 @@ using namespace std;
 class OrderCollection
 {
 private:
-    int numOrders = 0;
+    int numOrders;
     Order *orders[100]; // 구매 내역
 
 public:
+    OrderCollection()
+    {
+        this->numOrders = 0;
+    }
     Order **getOrders()
     {
         return orders;

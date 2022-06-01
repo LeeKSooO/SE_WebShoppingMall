@@ -57,6 +57,8 @@ void doTask()
         wholeMemberArr[wholeMemberNum++] = new Member("hs", "1234", "이한슬", "2202-1111");
         wholeMemberArr[wholeMemberNum++] = new Member("kc", "5678", "칸초", "3030-1111");
 
+        cout << "멤버 아이디: " << wholeMemberArr[0]->getMemberId();
+
         wholeProductArr[wholeProductNum++] = new Product("hs", "새우깡", "농심", 1000, 1);
         wholeProductArr[wholeProductNum++] = new Product("hs", "감자깡", "농담", 1500, 1);
         wholeProductArr[wholeProductNum++] = new Product("hs", "오징어집", "빙그레", 2000, 1);
