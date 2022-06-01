@@ -11,10 +11,14 @@ using namespace std;
 class ProductCollection
 {
 private:
-  int numSoldProducts = 0;
+  int numSoldProducts;
   Product *soldProducts[100]; // 판매 완료 상품 포인터 배열
 
 public:
+  ProductCollection()
+  {
+    this->numSoldProducts = 0;
+  }
   Product **getSoldProducts()
   {
     return soldProducts;

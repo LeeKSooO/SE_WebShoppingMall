@@ -15,25 +15,7 @@ private:
 	Member *member;
 
 public:
-	Product *viewSoldHistory();
-	ViewSoldHistory(Member *member)
-	{
-		// product collection에 호출
-		ProductCollection *p = member->getProductCollection();
-		Product **soldProductList = p->getSoldProducts();
-		int num = p->getNumSoldProducts();
-
-		ViewSoldHistoryUI *ui = new ViewSoldHistoryUI();
-
-		ui->printTitle();
-
-		for (int i = 0; i < num; i++)
-		{
-			ui->printLine(soldProductList[i]);
-		}
-
-		ui->printEndl();
-	}
+	ViewSoldHistory(Member *member);
 };
 
 #endif

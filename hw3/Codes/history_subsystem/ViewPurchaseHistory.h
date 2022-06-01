@@ -1,8 +1,6 @@
 #include <iostream>
 #include "../entities/Product.h"
 #include "../entities/Member.h"
-#include "../entities/Order.h"
-#include "ViewPurchaseHistoryUI.h"
 
 using namespace std;
 
@@ -17,24 +15,7 @@ private:
 
 public:
 	Product *viewPurchaseHistory();
-	ViewPurchaseHistory(Member *member)
-	{
-		// order collection에 호출
-		OrderCollection *o = member->getOrderCollection();
-		Order **orderList = o->getOrders();
-		int num = o->getNumOrders();
-
-		ViewPurchaseHistoryUI *ui = new ViewPurchaseHistoryUI();
-
-		ui->printTitle();
-
-		for (int i = 0; i < num; i++)
-		{
-			ui->printLine(orderList[i]->getProduct());
-		}
-
-		ui->printEndl();
-	}
+	ViewPurchaseHistory(Member *);
 };
 
 #endif

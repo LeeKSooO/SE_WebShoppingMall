@@ -1,17 +1,26 @@
 #include <iostream>
-#include "/Member.h"
-#include "/Product.h"
+#include "Member.h"
+#include "Product.h"
+#include "../comm.h"
 #include "../collections/ProductCollection.h"
+#include "../collections/OrderCollection.h"
 
 using namespace std;
 
-Product *Member::listSoldProducts(ProductCollection *c)
+Member::Member(string newMemberId, string newMemberPw, string newMemberName, string newResidentRegistrationNum)
 {
-    return c->getSoldProducts;
+    numSoldProducts = 0;
+    memberId = newMemberId;
+    memberPw = newMemberPw;
+    memberName = newMemberName;
+    residentRegistrationNum = newResidentRegistrationNum;
+    ProductCollection *p = new ProductCollection();
+    productCollection = p;
+    OrderCollection *o = new OrderCollection();
+    orderCollection = o;
 }
 
-// void Member::registerProduct(string productName, string companyName, int price, int salesNum)
-// {
-//     Product product = new Product(productName, companyName, price, salesNum);
-
-// }
+string Member::getMemberId() { return memberId; }
+int Member::getNumSoldProducts() { return numSoldProducts; }
+ProductCollection *Member::getProductCollection() { return productCollection; }
+OrderCollection *Member::getOrderCollection() { return orderCollection; }
