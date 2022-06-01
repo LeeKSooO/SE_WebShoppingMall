@@ -1,5 +1,4 @@
 #pragma once
-#include"Member.h"
 #include"LogOutUI.h"
 
 

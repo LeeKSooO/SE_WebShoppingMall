@@ -30,17 +30,12 @@ Member::Member(string newMemberId, string newMemberPw, string newMemberName, str
 
 // } 
 string Member::getMemberId() { return memberId; }
+string Member::getMemberName() { return memberName; }
+string Member::getMemberRrn() { return residentRegistrationNum; }
+string Member::getMemberPw() { return memberPw; }
 int Member::getNumSoldProducts() { return numSoldProducts; }
 ProductCollection *Member::getProductCollection() { return productCollection; }
 OrderCollection *Member::getOrderCollection() { return orderCollection; } 
-
-Member::Member(string name, string rRN, string Id, string Pw) {
-   memberName = name;
-   residentRegistrationNum = rRN;
-   memberId = Id;
-   memberPw = Pw;
-}
-
 
 bool Member::checkIdPw(string Id, string Pw) {
 
@@ -76,9 +71,3 @@ void Member::createNewMember(Member* member) {
    wholeMemberArr[wholeMemberNum++] = member;
 }
 
-string Member::getMemberName() { return memberName; }
-string Member::getMemberRrn() { return residentRegistrationNum; }
-string Member::getMemberId() { return memberId; }
-string Member::getMemberPw() { return memberPw; }
-
-#endif 

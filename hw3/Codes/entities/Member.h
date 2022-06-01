@@ -22,9 +22,16 @@ private:
 public:
    Member(string, string, string, string);
    string getMemberId();
+   string getMemberName();
+   string getMemberRrn();
+   string getMemberPw();
    int getNumSoldProducts();
    ProductCollection *getProductCollection();
    OrderCollection *getOrderCollection();
+   bool checkIdPw(string Id, string Pw);
+   string deleteMember();
+   void createNewMember(Member* member);
+
 };
 
 #endif
