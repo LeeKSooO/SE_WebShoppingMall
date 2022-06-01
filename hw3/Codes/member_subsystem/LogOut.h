@@ -1,13 +1,16 @@
 #pragma once
-#include"LogOutUI.h"
+#include "LogOutUI.h"
 
-
-class LogOut {
+class LogOut
+{
 private:
+    Member *nowLogIn;
+
 public:
-    LogOut() {
-        LogOutUI* ui = new LogOutUI();
+    LogOut(Member *nowLogIn)
+    {
+        LogOutUI *ui = new LogOutUI();
         ui->printMemberId(nowLogIn);
-        nowLogIn = 0;
+        nowLogIn = nullptr;
     }
 };

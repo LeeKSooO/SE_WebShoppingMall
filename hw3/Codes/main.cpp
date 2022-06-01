@@ -20,11 +20,8 @@ using namespace std;
 void doTask();
 void program_exit();
 
-// int wholeMemberNum = 0;
 Member *wholeMemberArr[WHOLE_MEM_NUM];
-// int wholeProductNum = 0;
 Product *wholeProductArr[WHOLE_PRODUCT_NUM];
-// int wholeOrderNum = 0;
 Order *wholeOrderArr[WHOLE_ORDER_NUM];
 // login 한 멤버 저장
 Member *nowLogIn;
@@ -66,13 +63,13 @@ void doTask()
         string Id;
         string Pw;
         fin >> name >> rRN >> Id >> Pw;
-        SignUp* si = new SignUp(name, rRN, Id, Pw);
+        SignUp *si = new SignUp(wholeMemberArr, name, rRN, Id, Pw);
         break;
       }
       // 1.2. 회원탈퇴
       case 2:
       {
-        Withdraw* wd = new Withdraw();
+        Withdraw *wd = new Withdraw(wholeMemberArr, nowLogIn);
         break;
       }
       }
@@ -89,13 +86,13 @@ void doTask()
         string memberId;
         string memberPw;
         fin >> memberId >> memberPw;
-        LogIn* li = new LogIn(memberId, memberPw);
+        LogIn *li = new LogIn(wholeMemberArr, nowLogIn, memberId, memberPw);
         break;
       }
       // 2.2. 로그아웃
       case 2:
       {
-        LogOut* lo = new LogOut();
+        LogOut *lo = new LogOut(nowLogIn);
         break;
       }
       }
@@ -120,7 +117,7 @@ void doTask()
       case 3:
       {
         cout << "3.3. 판매 완료 상품 조회\n";
-        ViewSoldHistory *viewSoldHistory = new ViewSoldHistory(wholeMemberArr[0]);
+        ViewSoldHistory *viewSoldHistory = new ViewSoldHistory(nowLogIn);
         break;
       }
       }
@@ -145,7 +142,7 @@ void doTask()
       case 3:
       {
         cout << "4.3. 상품 구매 내역 조회\n";
-        ViewPurchaseHistory *viewPurchaseHistory = new ViewPurchaseHistory(wholeMemberArr[0]);
+        ViewPurchaseHistory *viewPurchaseHistory = new ViewPurchaseHistory(nowLogIn);
         break;
       }
       // 4.4. 상품 구매만족도 평가
@@ -170,7 +167,7 @@ void doTask()
       case 1:
       {
         cout << "5.1. 판매 상품 통계\n";
-        PrintSalesStatics *printSalesStatics = new PrintSalesStatics(wholeMemberArr[0]);
+        PrintSalesStatics *printSalesStatics = new PrintSalesStatics(nowLogIn);
         break;
       }
       }
@@ -224,3 +221,5 @@ float calAvgPurchaseEvaluation(string sellerId, string productName)
   float result = (float)sum / numPurchaseEvaluation;
   return round(result);
 }
+
+// g++ main.cpp entities/Member.cpp entities/Order.cpp entities/Product.cpp history_subsystem/EvaluatePurchase.cpp history_subsystem/PrintSalesStatics.cpp history_subsystem/ViewPurchaseHistory.cpp history_subsystem/ViewSoldHistory.cpp -o main
