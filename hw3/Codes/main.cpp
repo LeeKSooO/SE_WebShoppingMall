@@ -54,28 +54,26 @@ void doTask()
       case 1:
       {
         cout << "1.1. 회원가입\n";
-        wholeMemberArr[wholeMemberNum++] = new Member("hs", "1234", "이한슬", "2202-1111");
-        wholeMemberArr[wholeMemberNum++] = new Member("kc", "5678", "칸초", "3030-1111");
+        // wholeMemberArr[wholeMemberNum++] = new Member("hs", "1234", "이한슬", "2202-1111");
+        // wholeMemberArr[wholeMemberNum++] = new Member("kc", "5678", "칸초", "3030-1111");
 
-        cout << "멤버 아이디: " << wholeMemberArr[0]->getMemberId();
+            // wholeProductArr[wholeProductNum++] = new Product("hs", "새우깡", "농심", 1000, 1);
+        // wholeProductArr[wholeProductNum++] = new Product("hs", "감자깡", "농담", 1500, 1);
+        // wholeProductArr[wholeProductNum++] = new Product("hs", "오징어집", "빙그레", 2000, 1);
+        // wholeMemberArr[0]->getProductCollection()->addSoldProduct(wholeProductArr[0]);
+        // wholeMemberArr[0]->getProductCollection()->addSoldProduct(wholeProductArr[1]);
+        // wholeMemberArr[0]->getProductCollection()->addSoldProduct(wholeProductArr[2]);
 
-        wholeProductArr[wholeProductNum++] = new Product("hs", "새우깡", "농심", 1000, 1);
-        wholeProductArr[wholeProductNum++] = new Product("hs", "감자깡", "농담", 1500, 1);
-        wholeProductArr[wholeProductNum++] = new Product("hs", "오징어집", "빙그레", 2000, 1);
-        wholeMemberArr[0]->getProductCollection()->addSoldProduct(wholeProductArr[0]);
-        wholeMemberArr[0]->getProductCollection()->addSoldProduct(wholeProductArr[1]);
-        wholeMemberArr[0]->getProductCollection()->addSoldProduct(wholeProductArr[2]);
-
-        // 하나 구매했다 가정
-        wholeOrderArr[wholeOrderNum++] = new Order("hs", "감자깡", wholeProductArr[1]);
-        wholeOrderArr[wholeOrderNum++] = new Order("hs", "오징어집", wholeProductArr[2]);
-        wholeOrderArr[wholeOrderNum++] = new Order("hs", "새우깡", wholeProductArr[0]);
-        wholeProductArr[1]->increaseSalesNumAndDecreaseLeftNum();
-        wholeProductArr[2]->increaseSalesNumAndDecreaseLeftNum();
-        wholeProductArr[0]->increaseSalesNumAndDecreaseLeftNum();
-        wholeMemberArr[0]->getOrderCollection()->addOrder(wholeOrderArr[0]);
-        wholeMemberArr[0]->getOrderCollection()->addOrder(wholeOrderArr[1]);
-        wholeMemberArr[0]->getOrderCollection()->addOrder(wholeOrderArr[2]);
+        // // 하나 구매했다 가정
+        // wholeOrderArr[wholeOrderNum++] = new Order("hs", "감자깡", wholeProductArr[1]);
+        // wholeOrderArr[wholeOrderNum++] = new Order("hs", "오징어집", wholeProductArr[2]);
+        // wholeOrderArr[wholeOrderNum++] = new Order("hs", "새우깡", wholeProductArr[0]);
+        // wholeProductArr[1]->increaseSalesNumAndDecreaseLeftNum();
+        // wholeProductArr[2]->increaseSalesNumAndDecreaseLeftNum();
+        // wholeProductArr[0]->increaseSalesNumAndDecreaseLeftNum();
+        // wholeMemberArr[0]->getOrderCollection()->addOrder(wholeOrderArr[0]);
+        // wholeMemberArr[0]->getOrderCollection()->addOrder(wholeOrderArr[1]);
+        // wholeMemberArr[0]->getOrderCollection()->addOrder(wholeOrderArr[2]);
 
         // wholeMemberArr[0]->getProductCollection()->addSoldProduct(*(wholeProductArr[1]));
         break;
