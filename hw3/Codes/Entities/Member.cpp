@@ -7,8 +7,7 @@ using namespace std;
 class Member;
 
 
-// ¸â¹ö ¿£Æ¼Æ¼ Å¬·¡½º
-
+// ï¿½ï¿½ï¿½ ï¿½ï¿½Æ¼Æ¼ Å¬ï¿½ï¿½ï¿½ï¿½
 
 
 Member::Member(string name, string rRN, string Id, string Pw) {
