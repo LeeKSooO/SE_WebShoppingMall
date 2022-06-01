@@ -1,26 +1,25 @@
-#include <iostream>
-#include "../Entities/Member.h"
-#include "LogInUI.h"
+#pragma once
+#include"Member.h"
+#include"LogInUI.h"
 
-using namespace std;
+class LogIn {
+private:
+public:
+    LogIn(string memberId, string memberPw) {
+        LogInUI* ui = new LogInUI();
+        //Member* loginMem = new Member("","","memberId", "memberPw");
+        Member* mb = new Member("", "", memberId, memberPw);
+        bool logInYes = false;
+        logInYes = mb->checkIdPw(memberId, memberPw);
+        nowLogIn = mb; // ÀÎ¼ö ¼öÁ¤
 
-#ifndef LogIn_H
-#define LogIn_H
-
-class LogIn{
-
-    private:
-        Member *member;
-    public:
-        
-        LogIn(string memberId, string memberPw){
-            LogInUI *ui = new LogInUI();
-            Member* checkIdPw(memberId, memberPw); // ì¸ìˆ˜ ìˆ˜ì •
-
-            ui->printMemberIdPw(login);
-
+        if (logInYes) {
+            ui->printMemberIdPw(nowLogIn);
+        }
+        else {
+            ui->printLogInFail();
         }
 
-};
+    }
 
-#endif
+};

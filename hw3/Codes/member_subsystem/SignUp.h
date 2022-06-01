@@ -1,33 +1,27 @@
-#include <iostream>
-#include"../Entities/Member.h"
+#pragma once
+#include"Member.h"
 #include"SignUpUI.h"
 
 using namespace std;
 
-#ifndef SignUp_H
-#define SignUp_H
 
-class SignUp{
+class SignUp {
 
-    private:
-        string name;
-        string rRN;
-        string Id;
-        string Pw;
-        Member *member;
-    public:
+private:
+    string name;
+    string rRN;
+    string Id;
+    string Pw;
+public:
+    SignUp(string name, string rRN, string Id, string Pw) {
 
-        SignUp(string name, string rRN, string Id, string Pw){
+        SignUpUI* ui = new SignUpUI();
+        Member* newMem = new Member(name, rRN, Id, Pw);
 
-            SignUpUI *ui = new SignUpUI();
-            Member *newMem = new Member(name, rRN, Id, Pw);
-            Member *createNewMember(newMem);
+        newMem->createNewMember(newMem);
 
-            ui->printMemberInfo(newMem);
+        ui->printMemberInfo(newMem);
 
-        }
-        
+    }
 
 };
-
-#endif

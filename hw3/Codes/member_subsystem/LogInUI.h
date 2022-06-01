@@ -1,27 +1,23 @@
-#include <iostream>
-#include <fstream>
+#pragma once
 
-#include "../Entities/Member.h"
+//·Î±×ÀÎ ¹Ù¿î´õ¸® Å¬·¡½º
+class LogInUI {
+private:
+public:
+    void printMemberIdPw(Member* member) {
+        ofstream fout("output.txt", ios::app);
+        string Id = member->getMemberId();
+        string Pw = member->getMemberPw();
+        fout << "2.1 ·Î±×ÀÎ" << "\n";
+        fout << "> " << Id << " " << Pw << "\n";
+        fout.close();
+    }
 
-using namespace std;
-
-#ifndef LogInUI_H
-#define LogInUI_H
-
-//ë¡œê·¸ì¸ ë°”ìš´ë”ë¦¬ í´ëž˜ìŠ¤
-class LogInUI{
-    private:
-    public:
-
-        void printMemberIdPw(Member *member){
-            ofstream fout("output.txt", ios::app);
-            string Id = member->getMemberId();
-            string Pw = member->getMemberPw();
-            fout << "2.1 ë¡œê·¸ì¸" << "\n";
-            fout << "> " << Id << " " << Pw <<"\n";
-            fout.close();
-        }
+    void printLogInFail() {
+        ofstream fout("output.txt", ios::app);
+        fout << "2.1 ·Î±×ÀÎ\n";
+        fout << "> ÀÏÄ¡ÇÏ´Â ¾ÆÀÌµð¿Í ÆÐ½º¿öµå°¡ ¾ø½À´Ï´Ù.\n";
+        fout.close();
+    }
 
 };
-
-#endif

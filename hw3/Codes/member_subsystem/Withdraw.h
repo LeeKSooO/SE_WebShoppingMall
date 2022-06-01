@@ -1,29 +1,23 @@
-#include <iostream>
-#include <fstream>
+#pragma once
+#include"Member.h"
 #include "WithdrawUI.h"
 
-#include "../Entities/Member.h"
 
-using namespace std;
-
-#ifndef Withdraw_H
-#define Withdraw_H
-
-//회원탈퇴 바운더리 클래스
-class Withdraw{
-    private:
-        Member *member;
-    public:
-        Withdraw(Member* member){
-            
-            WithdrawUI *ui = new WithdrawUI();
-
-            memberId = Member *deleteMember(member);
-
+class Withdraw {
+private:
+public:
+    Withdraw() {
+        WithdrawUI* ui = new WithdrawUI();
+        if (nowLogIn == NULL) {
+            ui->printWithdrawFail();
+            return;
+        }
+        else {
+            string memberId = nowLogIn->deleteMember();
             ui->printMemberId(memberId);
-
+            return;
         }
 
-};
+    }
 
-#endif
+};

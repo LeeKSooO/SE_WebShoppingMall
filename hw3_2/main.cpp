@@ -1,12 +1,9 @@
+ï»¿#include <iostream>
+#include <fstream>
 #include "Member.h"
-#include "LogIn.h"
-#include "LogInUI.h"
-#include "LogOut.h"
-#include "LogOutUI.h"
-#include "SignUp.h"
-#include "SignUpUI.h"
-#include "WIthdraw.h"
-#include "WithdrawUI.h"
+#include "basic.h"
+#include "BoundaryClasses.h"
+#include "ControlClasses.h"
 
 
 
@@ -41,12 +38,12 @@ void doTask()
 
         switch (menuLevel1)
         {
-            // 1. È¸¿ø °ü¸® - °¡ÀÔ, Å»Åğ
+            // 1. íšŒì› ê´€ë¦¬ - ê°€ì…, íƒˆí‡´
         case 1:
         {
             switch (menuLevel2)
             {
-                // 1.1. È¸¿ø°¡ÀÔ
+                // 1.1. íšŒì›ê°€ì…
             case 1:
             {
                 string name;
@@ -57,7 +54,7 @@ void doTask()
                 SignUp* si = new SignUp(name, rRN, Id, Pw);
                 break;
             }
-            // 1.2. È¸¿øÅ»Åğ
+            // 1.2. íšŒì›íƒˆí‡´
             case 2:
             {
                 Withdraw* wd = new Withdraw();
@@ -66,12 +63,12 @@ void doTask()
             }
             break;
         }
-        // 2. È¸¿ø °ü¸® - ·Î±×ÀÎ, ·Î±×¾Æ¿ô
+        // 2. íšŒì› ê´€ë¦¬ - ë¡œê·¸ì¸, ë¡œê·¸ì•„ì›ƒ
         case 2:
         {
             switch (menuLevel2)
             {
-                // 2.1. ·Î±×ÀÎ
+                // 2.1. ë¡œê·¸ì¸
             case 1:
             {
                 string memberId;
@@ -80,7 +77,7 @@ void doTask()
                 LogIn* li = new LogIn(memberId, memberPw);
                 break;
             }
-            // 2.2. ·Î±×¾Æ¿ô
+            // 2.2. ë¡œê·¸ì•„ì›ƒ
             case 2:
             {
                 LogOut* lo = new LogOut();
@@ -88,22 +85,22 @@ void doTask()
             }
             }
         }
-        // 3. »óÇ° ÆÇ¸Å °ü¸®
+        // 3. ìƒí’ˆ íŒë§¤ ê´€ë¦¬
         case 3:
         {
             switch (menuLevel2)
             {
-                // 3.1. ÆÇ¸Å ÀÇ·ù µî·Ï
+                // 3.1. íŒë§¤ ì˜ë¥˜ ë“±ë¡
             case 1:
             {
-                break;//ÆÇ¸ÅÀÇ·ùµî·ÏÅ×½ºÆ®ÄÚµå
+                break;//íŒë§¤ì˜ë¥˜ë“±ë¡í…ŒìŠ¤íŠ¸ì½”ë“œ
             }
-            // 3.2. µî·Ï »óÇ° Á¶È¸
+            // 3.2. ë“±ë¡ ìƒí’ˆ ì¡°íšŒ
             case 2:
             {
                 break;
             }
-            // 3.3. ÆÇ¸Å ¿Ï·á »óÇ° Á¶È¸
+            // 3.3. íŒë§¤ ì™„ë£Œ ìƒí’ˆ ì¡°íšŒ
             case 3:
             {
                 break;
@@ -111,27 +108,27 @@ void doTask()
             }
             break;
         }
-        // 4. »óÇ° ±¸¸Å °ü¸®
+        // 4. ìƒí’ˆ êµ¬ë§¤ ê´€ë¦¬
         case 4:
         {
             switch (menuLevel2)
             {
-                // 4.1. »óÇ° Á¤º¸ °Ë»ö
+                // 4.1. ìƒí’ˆ ì •ë³´ ê²€ìƒ‰
             case 1:
             {
                 break;
             }
-            // 4.2. »óÇ° ±¸¸Å
+            // 4.2. ìƒí’ˆ êµ¬ë§¤
             case 2:
             {
                 break;
             }
-            // 4.3. »óÇ° ±¸¸Å ³»¿ª Á¶È¸
+            // 4.3. ìƒí’ˆ êµ¬ë§¤ ë‚´ì—­ ì¡°íšŒ
             case 3:
             {
                 break;
             }
-            // 4.4. »óÇ° ±¸¸Å¸¸Á·µµ Æò°¡
+            // 4.4. ìƒí’ˆ êµ¬ë§¤ë§Œì¡±ë„ í‰ê°€
             case 4:
             {
                 break;
@@ -139,12 +136,12 @@ void doTask()
             }
             break;
         }
-        // 5. Åë°è ³»¿ª
+        // 5. í†µê³„ ë‚´ì—­
         case 5:
         {
             switch (menuLevel2)
             {
-                // 5.1. ÆÇ¸Å »óÇ° Åë°è
+                // 5.1. íŒë§¤ ìƒí’ˆ í†µê³„
             case 1:
             {
                 break;
@@ -152,12 +149,12 @@ void doTask()
             }
             break;
         }
-        // 6. Á¾·á
+        // 6. ì¢…ë£Œ
         case 6:
         {
             switch (menuLevel2)
             {
-                // 6.1. Á¾·á
+                // 6.1. ì¢…ë£Œ
             case 1:
             {
                 // program_exit();
@@ -174,7 +171,7 @@ void doTask()
 
 // void program_exit()
 // {
-//   // ¹¹³Ö¾î¾ßµÇÁö..?
+//   // ë­ë„£ì–´ì•¼ë˜ì§€..?
 
 //   return;
 // }

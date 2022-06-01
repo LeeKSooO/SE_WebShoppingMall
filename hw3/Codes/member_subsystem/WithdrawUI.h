@@ -1,26 +1,23 @@
-#include <iostream>
-#include <fstream>
+#pragma once
 
-#include "../Entities/Member.h"
+class WithdrawUI {
+private:
+public:
 
-using namespace std;
+    void printMemberId(string withdrawedId) {
+        ofstream fout("output.txt", ios::app);
 
-#ifndef WithdrawUI_H
-#define WithdrawUI_H
+        fout << "1.2 È¸¿øÅ»Åð" << "\n";
+        fout << "> " << withdrawedId << "\n";
+        fout.close();
+    }
 
-//íšŒì›íƒˆí‡´ ë°”ìš´ë”ë¦¬ í´ëž˜ìŠ¤
-class WithdrawUI{
-    private:
-    public:
+    void printWithdrawFail() {
+        ofstream fout("output.txt", ios::app);
 
-        void printMemberId(string withdrawedId){
-            ofstream fout("output.txt", ios::app);
-    
-            fout << "1.2 íšŒì›íƒˆí‡´" << "\n";
-            fout << "> " << withdrawedId << "\n";
-            fout.close();
-        }
+        fout << "1.2 È¸¿øÅ»Åð" << "\n";
+        fout << "> ÇöÀç ·Î±×ÀÎ »óÅÂ°¡ ¾Æ´Õ´Ï´Ù.\n";
+        fout.close();
+    }
 
 };
-
-#endif

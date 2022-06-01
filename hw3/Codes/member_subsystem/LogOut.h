@@ -1,25 +1,16 @@
-#include <iostream>
-#include "../Entities/Member.h"
-#include "LogOutUI.h"
-
-using namespace std;
-
-#ifndef LogOut_H
-#define LogOut_H
+#pragma once
+#include"Member.h"
+#include"LogOutUI.h"
 
 
-class LogOut{
+class LogOut {
+private:
+public:
+    LogOut() {
+        LogOutUI* ui = new LogOutUI();
+        ui->printMemberId(nowLogIn);
+        nowLogIn = 0;
+    }
 
-    private:
-        Member *member;
-    public:
-        
-        LogOut(Member *member){
-            LogOutUI *ui = new LogOutUI();
-            
-            ui->printMemberId(member);
-        }
 
 };
-
-#endif
