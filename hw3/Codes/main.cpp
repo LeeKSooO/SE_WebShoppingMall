@@ -1,13 +1,12 @@
-#include "Member.h"
-#include "LogIn.h"
-#include "LogInUI.h"
-#include "LogOut.h"
-#include "LogOutUI.h"
-#include "SignUp.h"
-#include "SignUpUI.h"
-#include "WIthdraw.h"
-#include "WithdrawUI.h"
-
+#include "Entities/Member.h"
+#include "member_subsystem/LogIn.h"
+#include "member_subsystem/LogInUI.h"
+#include "member_subsystem/LogOut.h"
+#include "member_subsystem/LogOutUI.h"
+#include "member_subsystem/SignUp.h"
+#include "member_subsystem/SignUpUI.h"
+#include "member_subsystem/WIthdraw.h"
+#include "member_subsystem/WithdrawUI.h"
 
 
 using namespace std;
@@ -41,12 +40,12 @@ void doTask()
 
         switch (menuLevel1)
         {
-            // 1. È¸¿ø °ü¸® - °¡ÀÔ, Å»Åð
+            // 1. È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ - ï¿½ï¿½ï¿½ï¿½, Å»ï¿½ï¿½
         case 1:
         {
             switch (menuLevel2)
             {
-                // 1.1. È¸¿ø°¡ÀÔ
+                // 1.1. È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             case 1:
             {
                 string name;
@@ -57,7 +56,7 @@ void doTask()
                 SignUp* si = new SignUp(name, rRN, Id, Pw);
                 break;
             }
-            // 1.2. È¸¿øÅ»Åð
+            // 1.2. È¸ï¿½ï¿½Å»ï¿½ï¿½
             case 2:
             {
                 Withdraw* wd = new Withdraw();
@@ -66,12 +65,12 @@ void doTask()
             }
             break;
         }
-        // 2. È¸¿ø °ü¸® - ·Î±×ÀÎ, ·Î±×¾Æ¿ô
+        // 2. È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ - ï¿½Î±ï¿½ï¿½ï¿½, ï¿½Î±×¾Æ¿ï¿½
         case 2:
         {
             switch (menuLevel2)
             {
-                // 2.1. ·Î±×ÀÎ
+                // 2.1. ï¿½Î±ï¿½ï¿½ï¿½
             case 1:
             {
                 string memberId;
@@ -80,7 +79,7 @@ void doTask()
                 LogIn* li = new LogIn(memberId, memberPw);
                 break;
             }
-            // 2.2. ·Î±×¾Æ¿ô
+            // 2.2. ï¿½Î±×¾Æ¿ï¿½
             case 2:
             {
                 LogOut* lo = new LogOut();
@@ -88,22 +87,22 @@ void doTask()
             }
             }
         }
-        // 3. »óÇ° ÆÇ¸Å °ü¸®
+        // 3. ï¿½ï¿½Ç° ï¿½Ç¸ï¿½ ï¿½ï¿½ï¿½ï¿½
         case 3:
         {
             switch (menuLevel2)
             {
-                // 3.1. ÆÇ¸Å ÀÇ·ù µî·Ï
+                // 3.1. ï¿½Ç¸ï¿½ ï¿½Ç·ï¿½ ï¿½ï¿½ï¿½
             case 1:
             {
-                break;//ÆÇ¸ÅÀÇ·ùµî·ÏÅ×½ºÆ®ÄÚµå
+                break;//ï¿½Ç¸ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½×½ï¿½Æ®ï¿½Úµï¿½
             }
-            // 3.2. µî·Ï »óÇ° Á¶È¸
+            // 3.2. ï¿½ï¿½ï¿½ ï¿½ï¿½Ç° ï¿½ï¿½È¸
             case 2:
             {
                 break;
             }
-            // 3.3. ÆÇ¸Å ¿Ï·á »óÇ° Á¶È¸
+            // 3.3. ï¿½Ç¸ï¿½ ï¿½Ï·ï¿½ ï¿½ï¿½Ç° ï¿½ï¿½È¸
             case 3:
             {
                 break;
@@ -111,27 +110,27 @@ void doTask()
             }
             break;
         }
-        // 4. »óÇ° ±¸¸Å °ü¸®
+        // 4. ï¿½ï¿½Ç° ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         case 4:
         {
             switch (menuLevel2)
             {
-                // 4.1. »óÇ° Á¤º¸ °Ë»ö
+                // 4.1. ï¿½ï¿½Ç° ï¿½ï¿½ï¿½ï¿½ ï¿½Ë»ï¿½
             case 1:
             {
                 break;
             }
-            // 4.2. »óÇ° ±¸¸Å
+            // 4.2. ï¿½ï¿½Ç° ï¿½ï¿½ï¿½ï¿½
             case 2:
             {
                 break;
             }
-            // 4.3. »óÇ° ±¸¸Å ³»¿ª Á¶È¸
+            // 4.3. ï¿½ï¿½Ç° ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¸
             case 3:
             {
                 break;
             }
-            // 4.4. »óÇ° ±¸¸Å¸¸Á·µµ Æò°¡
+            // 4.4. ï¿½ï¿½Ç° ï¿½ï¿½ï¿½Å¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
             case 4:
             {
                 break;
@@ -139,12 +138,12 @@ void doTask()
             }
             break;
         }
-        // 5. Åë°è ³»¿ª
+        // 5. ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         case 5:
         {
             switch (menuLevel2)
             {
-                // 5.1. ÆÇ¸Å »óÇ° Åë°è
+                // 5.1. ï¿½Ç¸ï¿½ ï¿½ï¿½Ç° ï¿½ï¿½ï¿½
             case 1:
             {
                 break;
@@ -152,12 +151,12 @@ void doTask()
             }
             break;
         }
-        // 6. Á¾·á
+        // 6. ï¿½ï¿½ï¿½ï¿½
         case 6:
         {
             switch (menuLevel2)
             {
-                // 6.1. Á¾·á
+                // 6.1. ï¿½ï¿½ï¿½ï¿½
             case 1:
             {
                 // program_exit();
@@ -174,7 +173,7 @@ void doTask()
 
 // void program_exit()
 // {
-//   // ¹¹³Ö¾î¾ßµÇÁö..?
+//   // ï¿½ï¿½ï¿½Ö¾ï¿½ßµï¿½ï¿½ï¿½..?
 
 //   return;
 // }
