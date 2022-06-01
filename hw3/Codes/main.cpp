@@ -54,35 +54,18 @@ void doTask()
       case 1:
       {
         cout << "1.1. 회원가입\n";
-        // wholeMemberArr[wholeMemberNum++] = new Member("hs", "1234", "이한슬", "2202-1111");
-        // wholeMemberArr[wholeMemberNum++] = new Member("kc", "5678", "칸초", "3030-1111");
-
-            // wholeProductArr[wholeProductNum++] = new Product("hs", "새우깡", "농심", 1000, 1);
-        // wholeProductArr[wholeProductNum++] = new Product("hs", "감자깡", "농담", 1500, 1);
-        // wholeProductArr[wholeProductNum++] = new Product("hs", "오징어집", "빙그레", 2000, 1);
-        // wholeMemberArr[0]->getProductCollection()->addSoldProduct(wholeProductArr[0]);
-        // wholeMemberArr[0]->getProductCollection()->addSoldProduct(wholeProductArr[1]);
-        // wholeMemberArr[0]->getProductCollection()->addSoldProduct(wholeProductArr[2]);
-
-        // // 하나 구매했다 가정
-        // wholeOrderArr[wholeOrderNum++] = new Order("hs", "감자깡", wholeProductArr[1]);
-        // wholeOrderArr[wholeOrderNum++] = new Order("hs", "오징어집", wholeProductArr[2]);
-        // wholeOrderArr[wholeOrderNum++] = new Order("hs", "새우깡", wholeProductArr[0]);
-        // wholeProductArr[1]->increaseSalesNumAndDecreaseLeftNum();
-        // wholeProductArr[2]->increaseSalesNumAndDecreaseLeftNum();
-        // wholeProductArr[0]->increaseSalesNumAndDecreaseLeftNum();
-        // wholeMemberArr[0]->getOrderCollection()->addOrder(wholeOrderArr[0]);
-        // wholeMemberArr[0]->getOrderCollection()->addOrder(wholeOrderArr[1]);
-        // wholeMemberArr[0]->getOrderCollection()->addOrder(wholeOrderArr[2]);
-
-        // wholeMemberArr[0]->getProductCollection()->addSoldProduct(*(wholeProductArr[1]));
+        string name;
+        string rRN;
+        string Id;
+        string Pw;
+        fin >> name >> rRN >> Id >> Pw;
+        SignUp* si = new SignUp(name, rRN, Id, Pw);
         break;
-
-        // wholeMemberNum++;
       }
       // 1.2. 회원탈퇴
       case 2:
       {
+        Withdraw* wd = new Withdraw();
         break;
       }
       }
@@ -96,11 +79,16 @@ void doTask()
       // 2.1. 로그인
       case 1:
       {
+        string memberId;
+        string memberPw;
+        fin >> memberId >> memberPw;
+        LogIn* li = new LogIn(memberId, memberPw);
         break;
       }
       // 2.2. 로그아웃
       case 2:
       {
+        LogOut* lo = new LogOut();
         break;
       }
       }
