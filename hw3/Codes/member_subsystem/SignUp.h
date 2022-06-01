@@ -1,6 +1,9 @@
-#pragma once
-#include "SignUpUI.h"
+
+#include <iostream>
+#include <fstream>
 #include "../entities/Member.h"
+#include "SignUpUI.h"
+#pragma once
 
 using namespace std;
 
@@ -20,7 +23,7 @@ public:
         SignUpUI *ui = new SignUpUI();
         Member *newMem = new Member(name, rRN, Id, Pw);
 
-        newMem->createNewMember(newMem);
+        createNewMember(newMem);
 
         ui->printMemberInfo(newMem);
     }

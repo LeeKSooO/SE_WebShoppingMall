@@ -1,5 +1,9 @@
-#pragma once
+
+#include <iostream>
+#include <fstream>
+#include "../entities/Member.h"
 #include "LogInUI.h"
+#pragma once
 
 class LogIn
 {
@@ -15,7 +19,7 @@ public:
         // Member* loginMem = new Member("","","memberId", "memberPw");
         Member *mb = new Member("", "", memberId, memberPw);
         bool logInYes = false;
-        logInYes = mb->checkIdPw(memberId, memberPw);
+        logInYes = checkIdPw(memberId, memberPw);
         nowLogIn = mb;
 
         if (logInYes)
@@ -38,7 +42,7 @@ bool LogIn::checkIdPw(string Id, string Pw)
             continue;
         else
         {
-            if ((wholeMemberArr[i]->getMemberId() == Id) & (wholeMemberArr[i]->getMemberPw() == Pw))
+            if ((wholeMemberArr[i]->getMemberId() == Id) && (wholeMemberArr[i]->getMemberPw() == Pw))
             {
                 nowLogIn = wholeMemberArr[i];
                 return true;

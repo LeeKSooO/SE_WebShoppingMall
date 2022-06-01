@@ -1,5 +1,6 @@
 #include <fstream>
 #include <iostream>
+#include"../entities/Member.h"
 using namespace std;
 #pragma once
 

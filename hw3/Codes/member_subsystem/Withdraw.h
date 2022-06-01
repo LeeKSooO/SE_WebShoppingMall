@@ -1,7 +1,8 @@
-#pragma once
+
 #include <iostream>
 #include "WithdrawUI.h"
 #include "../entities/Member.h"
+#pragma once
 
 class Withdraw
 {

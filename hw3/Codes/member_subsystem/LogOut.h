@@ -1,6 +1,9 @@
-#pragma once
-#include "LogOutUI.h"
 
+#include <iostream>
+#include <fstream>
+#include "../entities/Member.h"
+#include "LogOutUI.h"
+#pragma once
 class LogOut
 {
 private:

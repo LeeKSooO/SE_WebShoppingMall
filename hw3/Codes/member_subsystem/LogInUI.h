@@ -1,6 +1,9 @@
+
+#include <iostream>
+#include <fstream>
+#include "../entities/Member.h"
 #pragma once
 
-//�α��� �ٿ���� Ŭ����
 class LogInUI {
 private:
 public:

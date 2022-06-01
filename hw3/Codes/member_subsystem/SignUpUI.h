@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include "../entities/Member.h"
 #pragma once
 
 class SignUpUI
