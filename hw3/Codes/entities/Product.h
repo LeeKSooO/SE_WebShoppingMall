@@ -20,27 +20,16 @@ private:
   int leftNum;
 
 public:
-  Product(string sellerId, string productName, string companyName, int price, int leftNum)
-  {
-    this->sellerId = sellerId;
-    this->productName = productName;
-    this->companyName = companyName;
-    this->price = price;
-    this->leftNum = leftNum;
-  }
-  string getSellerId() { return this->sellerId; }
-  Product getProductDetails() { return *this; } // 판매중인 상품 리스트 가져오기
-  string getProductName() { return this->productName; }
-  string getCompanyName() { return this->companyName; }
-  int getPrice() { return this->price; }
-  int getSalesNum() { return this->salesNum; }
-  int getLeftNum() { return this->leftNum; }
-  void increaseSalesNumAndDecreaseLeftNum()
-  {
-    (this->salesNum)++;
-    (this->leftNum)--;
-  }
-  float getAvgPurchaseEvaluation() { return this->avgPurchaseEvaluation; }
+  Product(string sellerId, string productName, string companyName, int price, int leftNum);
+  string getSellerId();
+  Product getProductDetails();
+  string getProductName();
+  string getCompanyName();
+  int getPrice();
+  int getSalesNum();
+  int getLeftNum();
+  void increaseSalesNumAndDecreaseLeftNum();
+  float getAvgPurchaseEvaluation();
   // float calAvgPurchaseEvaluation(string productName, int purchaseEvaluation); // 판매한 상품들 리스트 가져오기
 };
 

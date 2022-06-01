@@ -17,18 +17,12 @@ private:
     Product *product;
 
 public:
-    Order(string sellerId, string productName, Product *product)
-    {
-        this->sellerId = sellerId;
-        this->productName = productName;
-        this->product = product;
-        purchaseEvaluation = 0;
-    }
-    string getSellerId() { return this->sellerId; }
-    string getProductName() { return this->productName; }
-    int getPurchaseEvaluation() { return this->purchaseEvaluation; }
-    void setPurchaseEvaluation(int purchaseEvaluation) { this->purchaseEvaluation = purchaseEvaluation; }
-    Product *getProduct() { return this->product; }
+    Order(string sellerId, string productName, Product *product);
+    string getSellerId();
+    string getProductName();
+    int getPurchaseEvaluation();
+    void setPurchaseEvaluation(int purchaseEvaluation);
+    Product *getProduct();
 };
 
 #endif
