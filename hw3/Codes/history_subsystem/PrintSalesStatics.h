@@ -24,9 +24,6 @@ public:
 		Product **soldProductList = p->getSoldProducts();
 		int num = p->getNumSoldProducts();
 
-		// int totalPrice = calTotalPrice(soldProductList, num);
-		// float avgPurchaseEvaluation = calAvgPurchaseEvaluation(member->getMemberId(), );
-
 		PrintSalesStaticsUI *ui = new PrintSalesStaticsUI();
 
 		ui->printTitle();
@@ -43,28 +40,8 @@ public:
 
 	int calTotalPrice(int price, int salesNum)
 	{
-		// int sum = 0;
-		// for (int i = 0; i < numSoldProducts; i++)
-		// {
-		// 	sum += (soldProductList[i]->getSalesNum()) * (soldProductList[i]->getPrice());
-		// }
-		// return sum;
-
 		return price * salesNum;
 	}
-	// float calAvgPurchaseEvaluation(Order **wholeOrderList)
-	// {
-	// int sum = 0;
-	// int numPurchaseEvaluation = 0;
-	// for (int i = 0; i < wholeOrderNum; i++)
-	// {
-	// 	int purchaseEvaluation = wholeOrderList[i]->getPurchaseEvaluation();
-	// 	if (purchaseEvaluation > 0)
-	// 		sum += purchaseEvaluation;
-	// 	numPurchaseEvaluation++;
-	// }
-	// return (float)sum / numPurchaseEvaluation;
-	// }
 };
 
 #endif

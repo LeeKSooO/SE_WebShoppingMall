@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
-
+#include <math.h>
+#include "../comm.h"
 #include "../entities/Order.h"
 
 using namespace std;
@@ -25,11 +26,11 @@ public:
         string pname = product->getProductName();
         string cname = product->getCompanyName();
         int price = product->getPrice();
-        int salesNum = product->getSalesNum();
-        // TODO: 평균 구매만족도
+        int leftNum = product->getLeftNum();
+        float avgPurchaseEvaluation = calAvgPurchaseEvaluation(product->getSellerId(), product->getProductName());
 
         ofstream fout("output.txt", ios::app);
-        fout << "> " << sellerId << " " << pname << " " << cname << " " << price << " " << salesNum << "\n";
+        fout << "> " << sellerId << " " << pname << " " << cname << " " << price << " " << leftNum << " " << round(avgPurchaseEvaluation) << "\n";
         fout.close();
     }
     void printEndl()

@@ -223,7 +223,7 @@ float calAvgPurchaseEvaluation(string sellerId, string productName)
       numPurchaseEvaluation++;
     }
   }
-  cout << "sum: " << sum << " numPurchaseEvaluation: " << numPurchaseEvaluation << endl;
+
   float result = (float)sum / numPurchaseEvaluation;
   return round(result);
 }

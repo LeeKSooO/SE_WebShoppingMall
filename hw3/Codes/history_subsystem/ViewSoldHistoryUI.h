@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
-
+#include <math.h>
+#include "../comm.h"
 #include "../entities/Product.h"
 
 using namespace std;
@@ -25,12 +26,10 @@ public:
         string cname = product->getCompanyName();
         int price = product->getPrice();
         int salesNum = product->getSalesNum();
-
-        //테스트용
-        int leftNum = product->getLeftNum();
+        float avgPurchaseEvaluation = calAvgPurchaseEvaluation(product->getSellerId(), product->getProductName());
 
         ofstream fout("output.txt", ios::app);
-        fout << "> " << pname << " " << cname << " " << price << " " << salesNum << " " << leftNum << "\n";
+        fout << "> " << pname << " " << cname << " " << price << " " << salesNum << " " << round(avgPurchaseEvaluation) << "\n";
         fout.close();
     }
     void printEndl()
