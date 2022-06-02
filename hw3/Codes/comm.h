@@ -11,9 +11,9 @@ using namespace std;
 
 #ifndef WHOLE_NUM
 #define WHOLE_NUM
-static int wholeMemberNum;
-static int wholeProductNum;
-static int wholeOrderNum;
+extern int wholeMemberNum;
+extern int wholeProductNum;
+extern int wholeOrderNum;
 extern int searchPoint;
 // void setSearchPoint(int input) // 다른 소스에서도 값을 바꿀 수 있게 제공되는 wrapper 함수.
 // {
