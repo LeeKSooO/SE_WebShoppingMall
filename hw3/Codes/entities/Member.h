@@ -12,8 +12,8 @@ class Member
 {
 private:
    Member *nowLogin;
-   string memberId; // 멤버 id
-   string memberPw; // 멤버 비밀번호
+   string memberId;
+   string memberPw;
    string memberName;
    string residentRegistrationNum;
    int numSoldProducts;

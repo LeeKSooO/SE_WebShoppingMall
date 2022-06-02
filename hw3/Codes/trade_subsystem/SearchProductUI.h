@@ -26,5 +26,5 @@ void SearchProductUI::startInterface(Product *product)
 
 	fout << "4.1. 상품 정보 검색\n";
 	fout << "> " << product->getSellerId() << " " << product->getProductName() << " " << product->getCompanyName() << " " << product->getPrice()
-		 << " " << product->getSalesNum() << endl;
+		 << " " << product->getLeftNum() << endl;
 }

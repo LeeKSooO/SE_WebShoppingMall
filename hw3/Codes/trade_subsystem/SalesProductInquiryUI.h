@@ -5,10 +5,12 @@
 #include "../entities/Product.h"
 #include "../comm.h"
 using namespace std;
-class SalesProductInquiryUI {
+class SalesProductInquiryUI
+{
 private:
 public:
-	void startInterface(Member* member) {
+	void startInterface(Member *member)
+	{
 		member->listProductsOnSale();
 	}
 };

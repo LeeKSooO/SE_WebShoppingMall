@@ -10,15 +10,17 @@ Product::Product(string newSellerId, string newProductName, string newCompanyNam
     companyName = newCompanyName;
     price = newPrice;
     leftNum = newLeftNum;
+    salesNum = 0;
     next = NULL;
 }
 Product::Product(string id, string pName, string cName, int money, int num, Product *pNext)
-{ 
+{
     sellerId = id;
-    productName = pName; 
-    companyName = cName; 
-    price = money;       
-    salesNum = num;      
+    productName = pName;
+    companyName = cName;
+    price = money;
+    leftNum = num;
+    salesNum = 0;
     next = pNext;
 }
 string Product::getSellerId() { return sellerId; }
