@@ -15,14 +15,18 @@ private:
     string productName;
     int purchaseEvaluation;
     Product *product;
+    Order *next;
 
 public:
     Order(string sellerId, string productName, Product *product);
+    Order(string sellerId, string name, Product *newProduct, Order *pNext);
     string getSellerId();
     string getProductName();
     int getPurchaseEvaluation();
     void setPurchaseEvaluation(int purchaseEvaluation);
     Product *getProduct();
+    void SetpNext(Order *newOrder);
+    Order *getNext();
 };
 
 #endif

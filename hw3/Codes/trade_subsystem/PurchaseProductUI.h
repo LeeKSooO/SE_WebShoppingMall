@@ -2,30 +2,28 @@
 #include "../entities/Member.h"
 #include "../comm.h"
 
-class PurchaseProductUI {
+class PurchaseProductUI
+{
 private:
 public:
-	void startInterface(Product ** wholeProductArr);	
-	void purchaseProduct(Member** wholeMemberArr, Product** wholeProductArr, Order** wholeOrderArr);
+	void startInterface(Product **wholeProductArr);
+	void purchaseProduct(Member **wholeMemberArr, Product **wholeProductArr, Order **wholeOrderArr);
 };
 
-//≥™¡ﬂø° ºˆ¡§ ∞Ì∑¡
-void PurchaseProductUI::purchaseProduct(Member** wholeMemberArr, Product** wholeProductArr, Order** wholeOrderArr) {
-	
-	string productId = wholeProductArr[searchPoint]->getProductId();
-	string recipientName = wholeMemberArr[wholeMemIndex]->getRecipientName(); 
-	string deliveryAddress = wholeMemberArr[wholeMemIndex]->getDeliveryAddress(); 
-	string contactInformation = wholeMemberArr[wholeMemIndex]->getContactInformatin(); 
-	Member * member = member = wholeMemberArr[wholeMemIndex];
-	wholeMemberArr[wholeMemIndex]->inputOrderInfo(wholeProductArr, wholeOrderArr, productId, recipientName, deliveryAddress, contactInformation);
+//ÔøΩÔøΩÔøΩﬂøÔøΩ ÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩ
+void PurchaseProductUI::purchaseProduct(Member **wholeMemberArr, Product **wholeProductArr, Order **wholeOrderArr)
+{
+	Member *member = wholeMemberArr[wholeMemIndex];
+	wholeMemberArr[wholeMemIndex]->inputOrderInfo(wholeProductArr, wholeOrderArr);
 }
 
-void PurchaseProductUI::startInterface(Product** wholeProductArr) {
-	ofstream fout("C:\\Users\\rtrt0\\OneDrive\\πŸ≈¡ »≠∏È\\textfile\\output.txt", ios::app);
-	fout << "4.2. ªÛ«∞ ±∏∏≈\n";
+void PurchaseProductUI::startInterface(Product **wholeProductArr)
+{
+	ofstream fout("C:\\Users\\rtrt0\\OneDrive\\ÔøΩÔøΩÔøΩÔøΩ »≠ÔøΩÔøΩ\\textfile\\output.txt", ios::app);
+	fout << "4.2. ÔøΩÔøΩ«∞ ÔøΩÔøΩÔøΩÔøΩ\n";
 	fout << "> " << wholeProductArr[searchPoint]->getSellerId() << " " << wholeProductArr[searchPoint]->getProductName() << endl;
 
 	//----------output check----------
-	cout << "4.2. ªÛ«∞ ±∏∏≈\n";
+	cout << "4.2. ÔøΩÔøΩ«∞ ÔøΩÔøΩÔøΩÔøΩ\n";
 	cout << "> " << wholeProductArr[searchPoint]->getSellerId() << " " << wholeProductArr[searchPoint]->getProductName() << endl;
 }

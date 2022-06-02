@@ -14,6 +14,16 @@ Order::Order(string newSellerId, string newProductName, Product *newProduct)
     productName = newProductName;
     product = newProduct;
     purchaseEvaluation = 0;
+    next = NULL;
+}
+
+Order::Order(string newSellerId, string newProductName, Product *newProduct, Order *pNext)
+{ // ��� �ʱ�ȭ
+    sellerId = newSellerId;
+    productName = newProductName;
+    product = newProduct;
+    purchaseEvaluation = 0;
+    next = pNext;
 }
 
 string Order::getSellerId()
@@ -39,4 +49,14 @@ void Order::setPurchaseEvaluation(int newPurchaseEvaluation)
 Product *Order::getProduct()
 {
     return product;
+}
+
+Order *Order::getNext()
+{
+    return this->next;
+}
+
+void Order::SetpNext(Order *newProduct)
+{
+    this->next = newProduct;
 }

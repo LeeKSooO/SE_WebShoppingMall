@@ -10,6 +10,16 @@ Product::Product(string newSellerId, string newProductName, string newCompanyNam
     companyName = newCompanyName;
     price = newPrice;
     leftNum = newLeftNum;
+    next = NULL;
+}
+Product::Product(string id, string pName, string cName, int money, int num, Product *pNext)
+{ // ��� �ʱ�ȭ
+    sellerId = id;
+    productName = pName; // ��ǰ��
+    companyName = cName; // ����ȸ���
+    price = money;       //����
+    salesNum = num;      //�Ǹ� ����
+    next = pNext;
 }
 string Product::getSellerId() { return sellerId; }
 // Product Product::getProductDetails() { return *this; } // 판매중인 상품 리스트 가져오기
@@ -24,3 +34,13 @@ void Product::increaseSalesNumAndDecreaseLeftNum()
     leftNum--;
 }
 float Product::getAvgPurchaseEvaluation() { return avgPurchaseEvaluation; }
+
+Product *Product::getNext()
+{
+    return this->next;
+}
+
+void Product::SetpNext(Product *newProduct)
+{
+    this->next = newProduct;
+}

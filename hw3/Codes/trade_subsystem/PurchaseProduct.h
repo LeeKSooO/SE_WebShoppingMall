@@ -4,31 +4,28 @@
 #include "../comm.h"
 #include "PurchaseProductUI.h"
 
-//°Ë»ö ÈÄ Áï½Ã ±¸¸Å
-class PurchaseProduct {
+//ï¿½Ë»ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+class PurchaseProduct
+{
 private:
-	Member* member;
-	string productId;
+	Member *member;
 	string recipientName;
 	string deliveryAddress;
 	string contactInformation;
 
 public:
-	PurchaseProduct(Member** wholeMemberArr, Product** wholeProductArr ,Order**wholeOrderArr) {
-		PurchaseProductUI* ui = new PurchaseProductUI();
+	PurchaseProduct(Member **wholeMemberArr, Product **wholeProductArr, Order **wholeOrderArr)
+	{
+		PurchaseProductUI *ui = new PurchaseProductUI();
 		ui->purchaseProduct(wholeMemberArr, wholeProductArr, wholeOrderArr);
 		ui->startInterface(wholeProductArr);
 	}
 
-	void requestOrder(Member **wholeMemberArr, Product** wholeProductArr, Order** wholeOrderArr);	//¸É¹ö, »óÇ°, ÁÖ¹® Æ÷ÀÎÅÍ¹è¿­ÁÖ¼Ò
+	void requestOrder(Member **wholeMemberArr, Product **wholeProductArr, Order **wholeOrderArr); //ï¿½É¹ï¿½, ï¿½ï¿½Ç°, ï¿½Ö¹ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í¹è¿­ï¿½Ö¼ï¿½
 };
 
-void PurchaseProduct::requestOrder(Member** wholeMemberArr, Product** wholeProductArr, Order** wholeOrderArr) {
-	
-	productId = wholeProductArr[searchPoint]->getProductId();
-	recipientName = wholeMemberArr[wholeMemIndex]->getRecipientName(); 
-	deliveryAddress = wholeMemberArr[wholeMemIndex]->getDeliveryAddress(); 
-	contactInformation = wholeMemberArr[wholeMemIndex]->getContactInformatin(); 
+void PurchaseProduct::requestOrder(Member **wholeMemberArr, Product **wholeProductArr, Order **wholeOrderArr)
+{
 
-	member->inputOrderInfo(wholeProductArr, wholeOrderArr, productId, recipientName, deliveryAddress , contactInformation);
+	member->inputOrderInfo(wholeProductArr, wholeOrderArr);
 }

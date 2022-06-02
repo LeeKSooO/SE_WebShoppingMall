@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include "Member.h"
 #include "Product.h"
 #include "../comm.h"
@@ -29,19 +30,19 @@ OrderCollection *Member::getOrderCollection() { return orderCollection; }
 
 void Member::registerProductInfo(Product **wholeProductArr, string sellerId, string productName, string companyName, int price, int salesNum)
 {
-   productCollection.addProduct(wholeProductArr, sellerId, productName, companyName, price, salesNum);
+   productCollection->addProduct(wholeProductArr, sellerId, productName, companyName, price, salesNum);
 }
 
-void Member::inputOrderInfo(Product **wholeProductArr, Order **wholeOrderArr, string productId)
+void Member::inputOrderInfo(Product **wholeProductArr, Order **wholeOrderArr)
 {
-   orderCollection.addOrder(wholeProductArr, wholeOrderArr, productId);
+   orderCollection->addOrder(wholeProductArr, wholeOrderArr);
 }
 
 void Member::listProductsOnSale()
 {
-   Product *head = productCollection.findFirst();
-   Product *cur = productCollection.getCur();
-   ofstream fout("output.txt", ios::app);
+   Product *head = productCollection->findFirst();
+   Product *cur = productCollection->getCur();
+   ofstream fout("../output.txt", ios::app);
 
    fout << "3.2. ��� ��ǰ ��ȸ- - - - - - - -" << endl;
    if (head == NULL)
@@ -73,8 +74,8 @@ void Member::listProductsOnSale()
    }
 
    //----------output check----------//
-   head = productCollection.findFirst();
-   cur = productCollection.getCur();
+   head = productCollection->findFirst();
+   cur = productCollection->getCur();
    if (head == NULL)
    {
       cout << "ProductCollection is empty." << endl;

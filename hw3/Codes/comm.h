@@ -14,7 +14,7 @@ using namespace std;
 static int wholeMemberNum = 0;
 static int wholeProductNum = 0;
 static int wholeOrderNum = 0;
-
+static int searchPoint = 0;
 static int wholeMemIndex = -1;
 #endif
 

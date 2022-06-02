@@ -13,12 +13,11 @@ class ProductCollection
 private:
   int numSoldProducts;
   Product *soldProducts[100]; // 판매 완료 상품 포인터 배열
+  Product *head;
+  Product *cur;
 
 public:
-  ProductCollection()
-  {
-    this->numSoldProducts = 0;
-  }
+  ProductCollection();
   Product **getSoldProducts()
   {
     return soldProducts;
@@ -28,6 +27,10 @@ public:
   {
     this->soldProducts[(this->numSoldProducts)++] = product;
   }
+  Product *findFirst();
+  Product *getCur();
+  void getProducts();
+  void addProduct(Product **wholeProductArr, string sellerId, string pName, string cName, int money, int num);
 };
 
 #endif

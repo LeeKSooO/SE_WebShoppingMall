@@ -37,7 +37,7 @@ public:
    string deleteMember();
    void createNewMember(Member *member);
    void registerProductInfo(Product **wholeProductArr, string sellerId, string productName, string companyName, int price, int salesNum);
-   void inputOrderInfo(Product **wholeProductArr, Order **wholeOrderArr, string productId);
+   void inputOrderInfo(Product **wholeProductArr, Order **wholeOrderArr);
    void listProductsOnSale();
 };
 
