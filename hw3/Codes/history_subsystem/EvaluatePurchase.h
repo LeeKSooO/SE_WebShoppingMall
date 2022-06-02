@@ -11,7 +11,6 @@ using namespace std;
 #ifndef EvaluatePurchase_H
 #define EvaluatePurchase_H
 
-// 구매 만족도 평가 컨트롤 클래스
 class EvaluatePurchase
 {
 private:

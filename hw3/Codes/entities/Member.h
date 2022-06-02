@@ -7,7 +7,6 @@ using namespace std;
 #ifndef Member_H
 #define Member_H
 
-// 멤버 엔티티 클래스
 class Member
 {
 private:

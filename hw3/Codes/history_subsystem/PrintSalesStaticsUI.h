@@ -8,12 +8,10 @@ using namespace std;
 #ifndef PrintSalesStaticsUI_H
 #define PrintSalesStaticsUI_H
 
-// 판매 상품 통계 바운더리 클래스
 class PrintSalesStaticsUI
 {
 private:
 public:
-    // void startInterface(Product soldProudcts[]);
     void printPrintSalesStaticsTitle();
     void printSalesStatics(string productName, int totalPrice, float avgPurchaseEvaluation);
     void printPrintSalesStaticsEndl();

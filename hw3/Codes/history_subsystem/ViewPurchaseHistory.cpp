@@ -9,7 +9,6 @@ using namespace std;
 
 ViewPurchaseHistory::ViewPurchaseHistory(Member *member)
 {
-    // order collection에 호출
     OrderCollection *o = member->getOrderCollection();
     Order **orderList = o->getOrders();
     int num = o->getNumOrders();

@@ -8,7 +8,7 @@ using namespace std;
 
 #ifndef ViewPurchaseHistoryUI_H
 #define ViewPurchaseHistoryUI_H
-// 구매 내역 조회 바운더리 클래스
+
 class ViewPurchaseHistoryUI
 {
 private:

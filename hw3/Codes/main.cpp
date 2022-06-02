@@ -32,8 +32,6 @@ int wholeProductNum = 0;
 int wholeOrderNum = 0;
 int searchPoint = 0;
 int wholeMemIndex = 0;
-// login 한 멤버 저장
-// Member nowLogIn;
 
 int main()
 {
@@ -71,7 +69,6 @@ void doTask()
         string Id;
         string Pw;
         fin >> name >> rRN >> Id >> Pw;
-        // fout << name << rRN << Id << Pw << endl;
         SignUp *si = new SignUp(wholeMemberArr, name, rRN, Id, Pw);
         break;
       }
@@ -228,7 +225,6 @@ float calAvgPurchaseEvaluation(string sellerId, string productName)
     int purchaseEvaluation = (*wholeOrderArr[i]).getPurchaseEvaluation();
     if (((*wholeOrderArr[i]).getSellerId() == sellerId) && ((*wholeOrderArr[i]).getProductName() == productName))
     {
-      cout << "calAvgPurchaseEvaluation: " << (*wholeOrderArr[i]).getSellerId() << " " << (*wholeOrderArr[i]).getProductName() << " " << purchaseEvaluation << endl;
       sum += purchaseEvaluation;
       numPurchaseEvaluation++;
     }
@@ -238,5 +234,5 @@ float calAvgPurchaseEvaluation(string sellerId, string productName)
   return round(result);
 }
 
-// cd hw3/Codes
+// 컴파일 명령어
 // g++ main.cpp entities/Member.cpp entities/Order.cpp entities/Product.cpp history_subsystem/EvaluatePurchase.cpp history_subsystem/PrintSalesStatics.cpp history_subsystem/ViewPurchaseHistory.cpp history_subsystem/ViewSoldHistory.cpp collections/ProductCollection.cpp collections/OrderCollection.cpp -o main

@@ -11,14 +11,12 @@ EvaluatePurchase::EvaluatePurchase(Member *member, string productName, int purch
 {
     EvaluatePurchaseUI *ui = new EvaluatePurchaseUI();
 
-    // order collection에 호출
     OrderCollection *o = member->getOrderCollection();
     Order **orderList = o->getOrders();
     int num = o->getNumOrders();
 
     ui->printEvaluatePurchaseTitle();
 
-    // 반복문 돌면서 상품명 일치하는 오더에 구매만족도 평가
     for (int i = 0; i < num; i++)
     {
         if (orderList[i]->getProductName() == productName)

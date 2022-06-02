@@ -13,7 +13,6 @@ public:
 	void purchaseProduct(Member **wholeMemberArr, Product **wholeProductArr, Order **wholeOrderArr);
 };
 
-//���߿� ���� ����
 void PurchaseProductUI::purchaseProduct(Member **wholeMemberArr, Product **wholeProductArr, Order **wholeOrderArr)
 {
 	Member *member = wholeMemberArr[wholeMemIndex];
@@ -24,5 +23,6 @@ void PurchaseProductUI::startInterface(Product **wholeProductArr)
 {
 	ofstream fout("output.txt", ios::app);
 	fout << "4.2. 상품 구매\n";
-	fout << "> " << wholeProductArr[searchPoint]->getSellerId() << " " << wholeProductArr[searchPoint]->getProductName() << endl << endl;
+	fout << "> " << wholeProductArr[searchPoint]->getSellerId() << " " << wholeProductArr[searchPoint]->getProductName() << endl
+		 << endl;
 }

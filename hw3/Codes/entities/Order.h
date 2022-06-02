@@ -7,7 +7,6 @@ using namespace std;
 #ifndef Order_H
 #define Order_H
 
-// 구매 엔티티 클래스
 class Order
 {
 private:

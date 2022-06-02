@@ -27,20 +27,6 @@ public:
         wholeMemberArr[wholeMemberNum] = newMem;
         wholeMemberNum++;
 
-        // createNewMember(newMem);
-
         ui->printMemberInfo(newMem);
     }
-    // void createNewMember(Member *);
-    // void createNewMember(Member *member)
-    // {
-    //     cout << "createNewMember: " << wholeMemberNum << endl;
-    //     (this->wholeMemberArr)[wholeMemberNum] = member;
-    //     wholeMemberNum++;
-    // }
 };
-
-// void SignUp::createNewMember(Member *member)
-// {
-//     wholeMemberArr[wholeMemberNum++] = member;
-// }

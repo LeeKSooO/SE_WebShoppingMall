@@ -24,7 +24,6 @@ Product::Product(string id, string pName, string cName, int money, int num, Prod
     next = pNext;
 }
 string Product::getSellerId() { return sellerId; }
-// Product Product::getProductDetails() { return *this; } // 판매중인 상품 리스트 가져오기
 string Product::getProductName() { return productName; }
 string Product::getCompanyName() { return companyName; }
 int Product::getPrice() { return price; }

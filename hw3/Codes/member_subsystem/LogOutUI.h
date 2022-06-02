@@ -1,10 +1,9 @@
 #include <fstream>
 #include <iostream>
-#include"../entities/Member.h"
+#include "../entities/Member.h"
 using namespace std;
 #pragma once
 
-// �α׾ƿ� �ٿ���� Ŭ����
 class LogOutUI
 {
 private:
@@ -16,7 +15,8 @@ public:
 
         fout << "2.2 로그아웃"
              << "\n";
-        fout << "> " << Id << endl << endl;
+        fout << "> " << Id << endl
+             << endl;
         fout.close();
     }
 };

@@ -9,7 +9,6 @@ using namespace std;
 
 ViewSoldHistory::ViewSoldHistory(Member *member)
 {
-    // product collection에 호출
     ProductCollection *p = member->getProductCollection();
     Product **soldProductList = p->getSoldProducts();
     int num = p->getNumSoldProducts();

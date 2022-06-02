@@ -6,7 +6,6 @@ using namespace std;
 #ifndef Product_H
 #define Product_H
 
-// 상품 엔티티 클래스
 class Product
 {
 private:
@@ -31,7 +30,6 @@ public:
   int getLeftNum();
   void increaseSalesNumAndDecreaseLeftNum();
   float getAvgPurchaseEvaluation();
-  // float calAvgPurchaseEvaluation(string productName, int purchaseEvaluation); // 판매한 상품들 리스트 가져오기
   Product *getNext();
   void SetpNext(Product *newProduct);
   void setLeftNumAndSalesNum();

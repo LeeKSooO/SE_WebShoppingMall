@@ -6,7 +6,6 @@ using namespace std;
 #ifndef PrintSalesStatics_H
 #define PrintSalesStatics_H
 
-// 판매 통계 출력 컨트롤 클래스
 class PrintSalesStatics
 {
 private:

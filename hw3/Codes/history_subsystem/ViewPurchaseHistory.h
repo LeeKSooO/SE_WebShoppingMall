@@ -7,7 +7,6 @@ using namespace std;
 #ifndef ViewPurchaseHistory_H
 #define ViewPurchaseHistory_H
 
-// 구매 내역 조회 컨트롤 클래스
 class ViewPurchaseHistory
 {
 private:

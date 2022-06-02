@@ -5,7 +5,7 @@
 using namespace std;
 
 ProductCollection::ProductCollection()
-{ // ��� �ʱ�ȭ
+{
     head = NULL;
     cur = NULL;
 }
