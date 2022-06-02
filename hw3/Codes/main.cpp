@@ -238,5 +238,6 @@ float calAvgPurchaseEvaluation(string sellerId, string productName)
   float result = (float)sum / numPurchaseEvaluation;
   return round(result);
 }
+
 // cd hw3/Codes
 // g++ main.cpp entities/Member.cpp entities/Order.cpp entities/Product.cpp history_subsystem/EvaluatePurchase.cpp history_subsystem/PrintSalesStatics.cpp history_subsystem/ViewPurchaseHistory.cpp history_subsystem/ViewSoldHistory.cpp collections/ProductCollection.cpp collections/OrderCollection.cpp -o main

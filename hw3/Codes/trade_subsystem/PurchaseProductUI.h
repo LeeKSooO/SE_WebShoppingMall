@@ -22,8 +22,7 @@ void PurchaseProductUI::purchaseProduct(Member **wholeMemberArr, Product **whole
 
 void PurchaseProductUI::startInterface(Product **wholeProductArr)
 {
-	ofstream fout("ㅐutput.txt", ios::app);
+	ofstream fout("output.txt", ios::app);
 	fout << "4.2. 상품 구매\n";
 	fout << "> " << wholeProductArr[searchPoint]->getSellerId() << " " << wholeProductArr[searchPoint]->getProductName() << endl;
-
 }

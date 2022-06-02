@@ -55,12 +55,11 @@ void Member::listProductsOnSale()
    fout << ">  " << endl;
    cur = head;
 
-   fout <<  cur->getProductName() << " " << cur->getCompanyName() <<  " " << cur->getPrice() << " " <<  cur->getSalesNum() << endl;
-  
+   fout << cur->getProductName() << " " << cur->getCompanyName() << " " << cur->getPrice() << " " << cur->getSalesNum() << endl;
+
    while (cur->getNext() != NULL)
    {
       cur = cur->getNext();
-      fout << cur->getProductName() << " " << cur->getCompanyName() << " " <<  cur->getPrice() << " " <<  cur->getSalesNum() << endl;
+      fout << cur->getProductName() << " " << cur->getCompanyName() << " " << cur->getPrice() << " " << cur->getLeftNum() << endl;
    }
-
 }

@@ -6,12 +6,15 @@
 #include "../comm.h"
 using namespace std;
 
-class AddProductUI {
+class AddProductUI
+{
 private:
 	string sellerId;
+
 public:
-	void registerProduct(Member** wholeMemberArr, Product** wholeProductArr, string sellerId, string pName, string cName, int money, int num) {
-		
+	void registerProduct(Member **wholeMemberArr, Product **wholeProductArr, string sellerId, string pName, string cName, int money, int num)
+	{
+
 		wholeMemberArr[wholeMemIndex]->registerProductInfo(wholeProductArr, sellerId, pName, cName, money, num);
 	}
 

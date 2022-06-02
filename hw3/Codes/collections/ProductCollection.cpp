@@ -13,8 +13,7 @@ ProductCollection::ProductCollection()
 void ProductCollection::addProduct(Product **wholeProductArr, string sellerId, string pName, string cName, int money, int num)
 {
     Product *newProduct = new Product(sellerId, pName, cName, money, num);
-    wholeProductArr[wholeProductNum++] = new Product(sellerId, pName, cName, money, num);
-
+    wholeProductArr[wholeProductNum++] = newProduct;
     if (head == NULL)
     {
         head = newProduct;

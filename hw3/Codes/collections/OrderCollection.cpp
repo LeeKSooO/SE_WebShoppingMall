@@ -15,9 +15,9 @@ OrderCollection::OrderCollection()
 
 void OrderCollection::addOrder(Product **wholeProductArr, Order **wholeOrderArr)
 {
+    wholeProductArr[searchPoint]->setLeftNumAndSalesNum();
+    //판매 완료 상품에 추가
 
-    // wholeMemberArr[wholeMemIndex]->setLeftNum();
-    wholeProductArr[searchPoint]->setLeftNum();
     Order *newOrder = new Order(wholeProductArr[searchPoint]->getSellerId(), wholeProductArr[searchPoint]->getProductName(), wholeProductArr[searchPoint]);
     wholeOrderArr[wholeOrderNum++] = new Order(wholeProductArr[searchPoint]->getSellerId(), wholeProductArr[searchPoint]->getProductName(), wholeProductArr[searchPoint]);
     this->orders[(this->numOrders)++] = newOrder;
