@@ -14,6 +14,7 @@ public:
 	{
 		SearchProductUI *ui = new SearchProductUI();
 		searchPoint = searchProduct(wholeProductArr, productName);
+		// setSearchPoint(searchProduct(wholeProductArr, productName));
 		ui->startInterface(wholeProductArr[searchPoint]);
 	}
 

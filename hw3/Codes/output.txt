@@ -37,23 +37,22 @@
 > ks0301 kkk
 
 3.2. 등록 상품 조회
-> pants ks 35000 -1
+> pants ks 35000 0
 > shirts hj 30000 1
-> kkk qwe 151515 1
+> kkk qwe 151515 0
 
 3.3. 판매 완료 상품 조회
 
 4.3. 상품 구매 내역 조회
-> ks0301 pants ks 35000 -1 nan
-> ks0301 pants ks 35000 -1 nan
+> ks0301 pants ks 35000 0 nan
+> ks0301 kkk qwe 151515 0 nan
 
 4.4. 상품 구매만족도 평가
 > ks0301 pants 3
-> ks0301 pants 3
 
 4.3. 상품 구매 내역 조회
-> ks0301 pants ks 35000 -1 nan
-> ks0301 pants ks 35000 -1 nan
+> ks0301 pants ks 35000 0 nan
+> ks0301 kkk qwe 151515 0 nan
 
 5.1. 판매 상품 통계
 

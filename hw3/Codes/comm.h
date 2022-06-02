@@ -14,7 +14,11 @@ using namespace std;
 static int wholeMemberNum;
 static int wholeProductNum;
 static int wholeOrderNum;
-static int searchPoint;
+extern int searchPoint;
+// void setSearchPoint(int input) // 다른 소스에서도 값을 바꿀 수 있게 제공되는 wrapper 함수.
+// {
+//     searchPoint = input;
+// }
 static int wholeMemIndex;
 #endif
 
