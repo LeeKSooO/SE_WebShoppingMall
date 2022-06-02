@@ -18,7 +18,7 @@ public:
 
         fout << "1.1 회원가입"
              << "\n";
-        fout << "> " << name << " " << rRN << " " << Id << " " << Pw << "\n";
+        fout << "> " << name << " " << rRN << " " << Id << " " << Pw << endl << endl;
         fout.close();
     }
 };

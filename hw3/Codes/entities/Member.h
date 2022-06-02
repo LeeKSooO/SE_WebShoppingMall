@@ -39,6 +39,9 @@ public:
    void registerProductInfo(Product **wholeProductArr, string sellerId, string productName, string companyName, int price, int salesNum);
    void inputOrderInfo(Product **wholeProductArr, Order **wholeOrderArr);
    void listProductsOnSale();
+   Member * getMemberByMemberId() {
+      //포문 돌려서 전체 멤버 배열에서 멤버 아이디 비교해서 맞는 멤버를 리턴
+   }
 };
 
 #endif

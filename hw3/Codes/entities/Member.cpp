@@ -62,4 +62,5 @@ void Member::listProductsOnSale()
       cur = cur->getNext();
       fout << cur->getProductName() << " " << cur->getCompanyName() << " " << cur->getPrice() << " " << cur->getLeftNum() << endl;
    }
+   cout << endl;
 }

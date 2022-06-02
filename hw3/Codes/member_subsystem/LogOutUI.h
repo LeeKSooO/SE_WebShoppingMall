@@ -16,7 +16,7 @@ public:
 
         fout << "2.2 로그아웃"
              << "\n";
-        fout << "> " << Id << "\n";
+        fout << "> " << Id << endl << endl;
         fout.close();
     }
 };

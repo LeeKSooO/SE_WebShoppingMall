@@ -44,7 +44,7 @@ int LogIn::checkIdPw(string Id, string Pw)
         }
         else
         {
-            cout << "checkIdPw: " << Id << " " << Pw << endl;
+            cout << "checkIdPw: " << Id << " " << Pw << endl << endl;
             continue;
         }
     }
