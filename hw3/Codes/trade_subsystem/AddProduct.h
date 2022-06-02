@@ -23,7 +23,7 @@ public:
 		sellerId = wholeMemberArr[wholeMemIndex]->getMemberId();
 		AddProductUI* ui = new AddProductUI();
 		ui->registerProduct(wholeMemberArr, wholeProductArr, sellerId, pName, cName, money, num);
-		ui->startInterface(wholeProductArr);
+		ui->startInterface(pName, cName, money, num);
 	}
 	void inputProductInfo(Member** wholeMemberArr, Product** wholeProductArr, string productName, string companyName, int price, int salesNum);
 };
