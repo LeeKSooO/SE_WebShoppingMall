@@ -1,30 +1,5 @@
-#include <iostream>
 #include "../entities/Order.h"
 #include "../comm.h"
-
-Order::Order(string id, string name, string address, string contact) {	// 노드 초기화
-	productId = id;
-	recipientName = name;
-	deliveryAddress = address;
-	contatcInformation = contact;
-	next = NULL;
-}
-
-Order::Order(string id, string name, string address, string contact, Order* pNext) {  // 노드 초기화
-	productId = id;
-	recipientName = name;
-	deliveryAddress = address;
-	contatcInformation = contact;
-	next = pNext;
-}
-
-Order* Order::getNext() {
-	return this->next;
-}
-
-void Order::SetpNext(Order* newProduct) {
-	this->next = newProduct;
-}
 
 OrderCollection::OrderCollection() {	// 노드 초기화
 	head = NULL;

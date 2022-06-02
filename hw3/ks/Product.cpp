@@ -1,6 +1,6 @@
 #include <string>
-#include "Product.h"
-#include "comm.h"
+#include "../entities/Product.h"
+#include "../comm.h"
 using namespace std;
 
 Product::Product(string id, string pName, string cName, int money, int num) {	// 노드 초기화
