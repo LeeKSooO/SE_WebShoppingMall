@@ -228,6 +228,7 @@ float calAvgPurchaseEvaluation(string sellerId, string productName)
     int purchaseEvaluation = (*wholeOrderArr[i]).getPurchaseEvaluation();
     if (((*wholeOrderArr[i]).getSellerId() == sellerId) && ((*wholeOrderArr[i]).getProductName() == productName))
     {
+      cout << "calAvgPurchaseEvaluation: " << (*wholeOrderArr[i]).getSellerId() << " " << (*wholeOrderArr[i]).getProductName() << " " << purchaseEvaluation << endl;
       sum += purchaseEvaluation;
       numPurchaseEvaluation++;
     }
