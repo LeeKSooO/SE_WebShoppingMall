@@ -34,7 +34,7 @@ public:
   // float calAvgPurchaseEvaluation(string productName, int purchaseEvaluation); // 판매한 상품들 리스트 가져오기
   Product *getNext();
   void SetpNext(Product *newProduct);
-  void setLeftNum();
+  void setLeftNumAndSalesNum();
   void getProductDetails(string sellerId, string productName, string companyName, int price, int leftNum, float avgNum);
 };
 

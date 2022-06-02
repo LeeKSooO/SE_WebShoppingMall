@@ -1,6 +1,6 @@
 #include <fstream>
 #include <iostream>
-#include"Member.h"
+#include "Member.h"
 using namespace std;
 #pragma once
 
@@ -8,13 +8,13 @@ class LogOutUI
 {
 private:
 public:
-    void printMemberId(Member* member)
+    void printMemberId(Member *member)
     {
-        ofstream fout("C:\\Users\\rtrt0\\OneDrive\\¹ÙÅÁ È­¸é\\textfile\\output.txt", ios::app);
+        ofstream fout("output.txt", ios::app);
         string Id = member->getMemberId();
 
-        fout << "2.2 ·Î±×¾Æ¿ô"
-            << "\n";
+        fout << "2.2 ï¿½Î±×¾Æ¿ï¿½"
+             << "\n";
         fout << "> " << Id << "\n";
         fout.close();
     }

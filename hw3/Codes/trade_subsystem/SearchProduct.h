@@ -6,21 +6,26 @@
 #include "SearchProductUI.h"
 using namespace std;
 
-class SearchProduct {
+class SearchProduct
+{
 private:
 public:
-	SearchProduct(Product** wholeProductArr, string productName) {
-		SearchProductUI* ui = new SearchProductUI();
+	SearchProduct(Product **wholeProductArr, string productName)
+	{
+		SearchProductUI *ui = new SearchProductUI();
 		searchPoint = searchProduct(wholeProductArr, productName);
 		ui->startInterface(wholeProductArr[searchPoint]);
 	}
 
-	int searchProduct(Product** wholeProductArr, string productName);
+	int searchProduct(Product **wholeProductArr, string productName);
 };
 
-int SearchProduct::searchProduct(Product** wholeProductArr, string productName) {
-	for (int i = 0; i <30; i++) {	
-		if ((wholeProductArr[i]->getProductName()) == productName) {
+int SearchProduct::searchProduct(Product **wholeProductArr, string productName)
+{
+	for (int i = 0; i < 30; i++)
+	{
+		if ((wholeProductArr[i]->getProductName()) == productName)
+		{
 			return i;
 		}
 	}

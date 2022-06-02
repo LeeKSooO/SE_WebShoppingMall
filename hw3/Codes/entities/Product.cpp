@@ -45,7 +45,8 @@ void Product::SetpNext(Product *newProduct)
     this->next = newProduct;
 }
 
-void Product::setLeftNum()
+void Product::setLeftNumAndSalesNum()
 {
-    this->salesNum = --salesNum;
+    this->salesNum = ++salesNum;
+    this->leftNum = --leftNum;
 }

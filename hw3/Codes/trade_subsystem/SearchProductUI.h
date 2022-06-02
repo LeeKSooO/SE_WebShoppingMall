@@ -5,23 +5,26 @@
 #include "../comm.h"
 using namespace std;
 
-class SearchProductUI {
+class SearchProductUI
+{
 private:
 	string pName;
+
 public:
-	SearchProductUI() { };
+	SearchProductUI(){};
 	void choiceProductName();
-	void startInterface(Product* product);
+	void startInterface(Product *product);
 };
 
-
-void SearchProductUI::choiceProductName() {
+void SearchProductUI::choiceProductName()
+{
 }
 
-void SearchProductUI::startInterface(Product *product) {
+void SearchProductUI::startInterface(Product *product)
+{
 	ofstream fout("output.txt", ios::app);
 
 	fout << "4.1. 상품 정보 검색\n";
 	fout << "> " << product->getSellerId() << " " << product->getProductName() << " " << product->getCompanyName() << " " << product->getPrice()
-		<< " " << product->getSalesNum() << endl;
+		 << " " << product->getSalesNum() << endl;
 }
