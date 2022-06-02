@@ -1,9 +1,11 @@
 #pragma once
+#include <iostream>
+#include <string>
 #include "../entities/Member.h"
 #include "../entities/Product.h"
 #include "../comm.h"
 #include "PurchaseProductUI.h"
-
+using namespace std;
 //�˻� �� ��� ����
 class PurchaseProduct
 {

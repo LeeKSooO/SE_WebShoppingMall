@@ -1,6 +1,11 @@
 #pragma once
+#include <iostream>
+#include <string>
 #include "AddProductUI.h"
+#include "../entities/Member.h"
+#include "../entities/Product.h"
 #include "../comm.h"
+using namespace std;
 
 class AddProductUI;
 

@@ -1,4 +1,9 @@
+#include <iostream>
+#include <string>
+#include "../entities/Member.h"
 #include "../entities/Product.h"
+#include "../comm.h"
+using namespace std;
 
 class SearchProductUI {
 private:
@@ -9,16 +14,16 @@ public:
 	void startInterface(Product* product);
 };
 
-//ÇÔ¼ö È£Ãâ °í·Á
+//ï¿½Ô¼ï¿½ È£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 void SearchProductUI::choiceProductName() {
 }
 
-// »óÇ° »ó¼¼ Á¤º¸ : ÆÇ¸ÅÀÚid, »óÇ°¸í, Á¦ÀÛÈ¸»ç¸í, °¡°Ý, ³²Àº¼ö·®, Æò±Õ±¸¸Å¸¸Á·µµ
+// ï¿½ï¿½Ç° ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ : ï¿½Ç¸ï¿½ï¿½ï¿½id, ï¿½ï¿½Ç°ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½È¸ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Õ±ï¿½ï¿½Å¸ï¿½ï¿½ï¿½ï¿½ï¿½
 void SearchProductUI::startInterface(Product *product) {
-	ofstream fout("C:\\Users\\rtrt0\\OneDrive\\¹ÙÅÁ È­¸é\\textfile\\output.txt", ios::app);
+	ofstream fout("C:\\Users\\rtrt0\\OneDrive\\ï¿½ï¿½ï¿½ï¿½ È­ï¿½ï¿½\\textfile\\output.txt", ios::app);
 
-	cout << "4.1. »óÇ° Á¤º¸ °Ë»ö\n";
+	cout << "4.1. ï¿½ï¿½Ç° ï¿½ï¿½ï¿½ï¿½ ï¿½Ë»ï¿½\n";
 	cout << "> " << product->getSellerId() << " " << product->getProductName() << " " << product->getCompanyName() << " " << product->getPrice()
-		<< " " << product->getSalesNum() << endl; //ÇÑ½½´Ô²¨¶û ÇÕÄ¥ ¶§ Æò±Õ ±¸¸Å¸¸Á·µµ ¾÷µ¥ÀÌÆ®ÇÏ±â
+		<< " " << product->getSalesNum() << endl; //ï¿½Ñ½ï¿½ï¿½Ô²ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¥ ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Å¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½Ï±ï¿½
 
 }

@@ -1,8 +1,11 @@
-#include "SearchProductUI.h"
+#include <iostream>
+#include <string>
+#include "../entities/Member.h"
 #include "../entities/Product.h"
 #include "../comm.h"
-
-// »óÇ° Á¤º¸ °Ë»ö : ÆÇ¸ÅÀÚid, »óÇ°¸í, Á¦ÀÛÈ¸»ç¸í, °¡°Ý, ³²Àº¼ö·®, Æò±Õ±¸¸Å¸¸Á·µµ
+#include "SearchProductUI.h"
+using namespace std;
+// ï¿½ï¿½Ç° ï¿½ï¿½ï¿½ï¿½ ï¿½Ë»ï¿½ : ï¿½Ç¸ï¿½ï¿½ï¿½id, ï¿½ï¿½Ç°ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½È¸ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Õ±ï¿½ï¿½Å¸ï¿½ï¿½ï¿½ï¿½ï¿½
 class SearchProduct {
 private:
 public:
@@ -16,7 +19,7 @@ public:
 };
 
 int SearchProduct::searchProduct(Product** wholeProductArr, string productName) {
-	for (int i = 0; i <30; i++) {	// ÀÌ ºÎºÐ ³ªÁß¿¡ static in wholeProductNum À¸·Î ¼öÁ¤.(Áö±Ý ¼ö ¾÷µ¥ÀÌÆ® ¾ÈµÊ)
+	for (int i = 0; i <30; i++) {	// ï¿½ï¿½ ï¿½Îºï¿½ ï¿½ï¿½ï¿½ß¿ï¿½ static in wholeProductNum ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.(ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½Èµï¿½)
 		if ((wholeProductArr[i]->getProductName()) == productName) {
 			return i;
 		}

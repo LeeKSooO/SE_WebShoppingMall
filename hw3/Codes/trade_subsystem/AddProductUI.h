@@ -1,8 +1,10 @@
 #pragma once
+#include <iostream>
 #include <string>
 #include "../entities/Member.h"
 #include "../entities/Product.h"
 #include "../comm.h"
+using namespace std;
 
 class AddProductUI {
 private:
@@ -11,18 +13,18 @@ public:
 	void registerProduct(Member** wholeMemberArr, Product** wholeProductArr, string sellerId, string pName, string cName, int money, int num) {
 		//cout << "index check : " << wholeMemIndex << endl;
 
-		//·Î±×ÀÎÀº ¾È µÈ »óÅÂ¿¡¼­ »óÇ°µî·Ï ºÒ°¡´É // ·Î±×ÀÎ ÇÑ »óÅÂ¿¡¼­ »óÇ° µî·Ï ¿©·¯¹ø °¡´É(·Î±×¾Æ¿ô½Ã ÃÊ±âÈ­)
-		//³ªÁß¿¡ product¿¡ member attribute Ãß°¡ÇÏ°í ½ÍÀ¸¸é ¿©±â¼­ ¼öÁ¤
+		//ï¿½Î±ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½Â¿ï¿½ï¿½ï¿½ ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ ï¿½Ò°ï¿½ï¿½ï¿½ // ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½Â¿ï¿½ï¿½ï¿½ ï¿½ï¿½Ç° ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(ï¿½Î±×¾Æ¿ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­)
+		//ï¿½ï¿½ï¿½ß¿ï¿½ productï¿½ï¿½ member attribute ï¿½ß°ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½â¼­ ï¿½ï¿½ï¿½ï¿½
 		//sellerId = wholeMemberArr[wholeMemIndex]->getMemberId();
 		wholeMemberArr[wholeMemIndex]->registerProductInfo(wholeProductArr, sellerId, pName, cName, money, num);
 		
-		cout << "3.1. ÆÇ¸Å ÀÇ·ù µî·Ï" << endl;
+		cout << "3.1. ï¿½Ç¸ï¿½ ï¿½Ç·ï¿½ ï¿½ï¿½ï¿½" << endl;
 		cout << "> " << wholeProductArr[wholeProductNum]->getProductName() << " " << wholeProductArr[wholeProductNum]->getCompanyName()
 			<< " " << wholeProductArr[wholeProductNum]->getPrice() << " " << wholeProductArr[wholeProductNum]->getSalesNum() << endl;
 	}
 	void startInterface(Product** wholeProductArr) {
-		ofstream fout("C:\\Users\\rtrt0\\OneDrive\\¹ÙÅÁ È­¸é\\textfile\\output.txt", ios::app);
-		fout << "3.1 ÆÇ¸Å ÀÇ·ù µî·Ï\n";
+		ofstream fout("C:\\Users\\rtrt0\\OneDrive\\ï¿½ï¿½ï¿½ï¿½ È­ï¿½ï¿½\\textfile\\output.txt", ios::app);
+		fout << "3.1 ï¿½Ç¸ï¿½ ï¿½Ç·ï¿½ ï¿½ï¿½ï¿½\n";
 		fout << "> " << wholeProductArr[wholeProductNum]->getProductName() << " " << wholeProductArr[wholeProductNum]->getCompanyName()
 			<< " " << wholeProductArr[wholeProductNum]->getPrice() << " " << wholeProductArr[wholeProductNum]->getSalesNum() << endl;
 		fout.close();
