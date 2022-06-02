@@ -14,9 +14,9 @@ class PrintSalesStaticsUI
 private:
 public:
     // void startInterface(Product soldProudcts[]);
-    void printTitle();
-    void printLine(string productName, int totalPrice, float avgPurchaseEvaluation);
-    void printEndl();
+    void printPrintSalesStaticsTitle();
+    void printSalesStatics(string productName, int totalPrice, float avgPurchaseEvaluation);
+    void printPrintSalesStaticsEndl();
 };
 
 #endif

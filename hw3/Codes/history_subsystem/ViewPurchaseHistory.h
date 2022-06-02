@@ -14,7 +14,6 @@ private:
 	Member *member;
 
 public:
-	Product *viewPurchaseHistory();
 	ViewPurchaseHistory(Member *);
 };
 

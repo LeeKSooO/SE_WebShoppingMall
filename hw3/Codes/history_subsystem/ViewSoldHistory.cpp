@@ -21,7 +21,12 @@ ViewSoldHistory::ViewSoldHistory(Member *member)
     if (num > 0)
         for (int i = 0; i < num; i++)
         {
-            ui->printLine(soldProductList[i]);
+            string productName = soldProductList[i]->getProductName();
+            string companyName = soldProductList[i]->getCompanyName();
+            int price = soldProductList[i]->getPrice();
+            int salesNum = soldProductList[i]->getSalesNum();
+            float avgPurchaseEvaluation = calAvgPurchaseEvaluation(soldProductList[i]->getSellerId(), soldProductList[i]->getProductName());
+            ui->printSoldProduct(productName, companyName, price, salesNum, avgPurchaseEvaluation);
         }
 
     ui->printEndl();
@@ -34,16 +39,10 @@ void ViewSoldHistoryUI::printTitle()
     fout.close();
 }
 
-void ViewSoldHistoryUI::printLine(Product *product)
+void ViewSoldHistoryUI::printSoldProduct(string productName, string companyName, int price, int salesNum, float avgPurchaseEvaluation)
 {
-    string pname = product->getProductName();
-    string cname = product->getCompanyName();
-    int price = product->getPrice();
-    int salesNum = product->getSalesNum();
-    float avgPurchaseEvaluation = calAvgPurchaseEvaluation(product->getSellerId(), product->getProductName());
-
     ofstream fout("output.txt", ios::app);
-    fout << "> " << pname << " " << cname << " " << price << " " << salesNum << " " << round(avgPurchaseEvaluation) << "\n";
+    fout << "> " << productName << " " << companyName << " " << price << " " << salesNum << " " << round(avgPurchaseEvaluation) << "\n";
     fout.close();
 }
 

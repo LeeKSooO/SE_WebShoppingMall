@@ -11,9 +11,10 @@ class EvaluatePurchaseUI
 {
 private:
 public:
-    void printTitle();
-    void outputInterface(Order *order);
-    void printEndl();
+    void inputEvalutePurchase(string productName, int purchaseEvaluation);
+    void printEvaluatePurchaseTitle();
+    void printPurchaseEvaluation(string sellerId, string productName, int purchaseEvaluation);
+    void printEvaluatePurchaseEndl();
 };
 
 #endif

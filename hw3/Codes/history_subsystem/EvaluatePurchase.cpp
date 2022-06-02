@@ -16,7 +16,7 @@ EvaluatePurchase::EvaluatePurchase(Member *member, string productName, int purch
     Order **orderList = o->getOrders();
     int num = o->getNumOrders();
 
-    ui->printTitle();
+    ui->printEvaluatePurchaseTitle();
 
     // 반복문 돌면서 상품명 일치하는 오더에 구매만족도 평가
     for (int i = 0; i < num; i++)
@@ -24,11 +24,14 @@ EvaluatePurchase::EvaluatePurchase(Member *member, string productName, int purch
         if (orderList[i]->getProductName() == productName)
         {
             savePurchaseEvaluation(orderList[i], purchaseEvaluation);
-            ui->outputInterface(orderList[i]);
+            string sellerId = orderList[i]->getSellerId();
+            string productName = orderList[i]->getProductName();
+            int purchaseEvaluation = orderList[i]->getPurchaseEvaluation();
+            ui->printPurchaseEvaluation(sellerId, productName, purchaseEvaluation);
         }
     }
 
-    ui->printEndl();
+    ui->printEvaluatePurchaseEndl();
 }
 
 void EvaluatePurchase::savePurchaseEvaluation(Order *order, int purchaseEvaluation)
@@ -36,25 +39,22 @@ void EvaluatePurchase::savePurchaseEvaluation(Order *order, int purchaseEvaluati
     order->setPurchaseEvaluation(purchaseEvaluation);
 }
 
-void EvaluatePurchaseUI::printTitle()
+void EvaluatePurchaseUI::printEvaluatePurchaseTitle()
 {
     ofstream fout("output.txt", ios::app);
     fout << "4.4. 상품 구매만족도 평가\n";
     fout.close();
 }
 
-void EvaluatePurchaseUI::outputInterface(Order *order)
+void EvaluatePurchaseUI::printPurchaseEvaluation(string sellerId, string productName, int purchaseEvaluation)
 {
-    string sellerId = order->getSellerId();
-    string productName = order->getProductName();
-    int purchaseEvaluation = order->getPurchaseEvaluation();
 
     ofstream fout("output.txt", ios::app);
     fout << "> " << sellerId << " " << productName << " " << purchaseEvaluation << "\n";
     fout.close();
 }
 
-void EvaluatePurchaseUI::printEndl()
+void EvaluatePurchaseUI::printEvaluatePurchaseEndl()
 {
     ofstream fout("output.txt", ios::app);
     fout << "\n";

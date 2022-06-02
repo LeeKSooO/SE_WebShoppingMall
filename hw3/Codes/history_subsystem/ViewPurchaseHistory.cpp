@@ -16,39 +16,46 @@ ViewPurchaseHistory::ViewPurchaseHistory(Member *member)
 
     ViewPurchaseHistoryUI *ui = new ViewPurchaseHistoryUI();
 
-    ui->printTitle();
+    ui->printViewPurchaseHistoryTitle();
 
     if (num > 0)
         for (int i = 0; i < num; i++)
         {
-            ui->printLine(orderList[i]->getProduct());
+            Product *product = orderList[i]->getProduct();
+            string sellerId = product->getSellerId();
+            string productName = product->getProductName();
+            string companyName = product->getCompanyName();
+            int price = product->getPrice();
+            int leftNum = product->getLeftNum();
+            float avgPurchaseEvaluation = calAvgPurchaseEvaluation(product->getSellerId(), product->getProductName());
+            ui->printPurchasedProduct(sellerId, productName, companyName, price, leftNum, avgPurchaseEvaluation);
         }
 
-    ui->printEndl();
+    ui->printViewPurchaseHistoryEndl();
 }
 
-void ViewPurchaseHistoryUI::printTitle()
+void ViewPurchaseHistoryUI::printViewPurchaseHistoryTitle()
 {
     ofstream fout("output.txt", ios::app);
     fout << "4.3. 상품 구매 내역 조회\n";
     fout.close();
 }
 
-void ViewPurchaseHistoryUI::printLine(Product *product)
+void ViewPurchaseHistoryUI::printPurchasedProduct(string sellerId, string productName, string companyName, int price, int leftNum, float avgPurchaseEvaluation)
 {
-    string sellerId = product->getSellerId();
-    string pname = product->getProductName();
-    string cname = product->getCompanyName();
-    int price = product->getPrice();
-    int leftNum = product->getLeftNum();
-    float avgPurchaseEvaluation = calAvgPurchaseEvaluation(product->getSellerId(), product->getProductName());
+    // string sellerId = product->getSellerId();
+    // string pname = product->getProductName();
+    // string cname = product->getCompanyName();
+    // int price = product->getPrice();
+    // int leftNum = product->getLeftNum();
+    // float avgPurchaseEvaluation = calAvgPurchaseEvaluation(product->getSellerId(), product->getProductName());
 
     ofstream fout("output.txt", ios::app);
-    fout << "> " << sellerId << " " << pname << " " << cname << " " << price << " " << leftNum << " " << round(avgPurchaseEvaluation) << "\n";
+    fout << "> " << sellerId << " " << productName << " " << companyName << " " << price << " " << leftNum << " " << round(avgPurchaseEvaluation) << "\n";
     fout.close();
 }
 
-void ViewPurchaseHistoryUI::printEndl()
+void ViewPurchaseHistoryUI::printViewPurchaseHistoryEndl()
 {
     ofstream fout("output.txt", ios::app);
     fout << "\n";

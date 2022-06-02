@@ -20,9 +20,9 @@ using namespace std;
 void doTask();
 void program_exit();
 
-Member *wholeMemberArr[WHOLE_MEM_NUM];
-Product *wholeProductArr[WHOLE_PRODUCT_NUM];
-Order *wholeOrderArr[WHOLE_ORDER_NUM];
+static Member *wholeMemberArr[WHOLE_MEM_NUM];
+static Product *wholeProductArr[WHOLE_PRODUCT_NUM];
+static Order *wholeOrderArr[WHOLE_ORDER_NUM];
 // login 한 멤버 저장
 // Member nowLogIn;
 
@@ -223,5 +223,5 @@ float calAvgPurchaseEvaluation(string sellerId, string productName)
   float result = (float)sum / numPurchaseEvaluation;
   return round(result);
 }
-
+// cd hw3/Codes
 // g++ main.cpp entities/Member.cpp entities/Order.cpp entities/Product.cpp history_subsystem/EvaluatePurchase.cpp history_subsystem/PrintSalesStatics.cpp history_subsystem/ViewPurchaseHistory.cpp history_subsystem/ViewSoldHistory.cpp -o main

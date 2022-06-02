@@ -13,9 +13,8 @@ class ViewSoldHistoryUI
 {
 private:
 public:
-    void startInterface(Product soldProudcts[]);
     void printTitle();
-    void printLine(Product *product);
+    void printSoldProduct(string productName, string companyName, int price, int salesNum, float avgPurchaseEvaluation);
     void printEndl();
 };
 

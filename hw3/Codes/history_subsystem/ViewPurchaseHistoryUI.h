@@ -13,10 +13,9 @@ class ViewPurchaseHistoryUI
 {
 private:
 public:
-    // void startInterface(Order orders[]);
-    void printTitle();
-    void printLine(Product *);
-    void printEndl();
+    void printViewPurchaseHistoryTitle();
+    void printPurchasedProduct(string sellerId, string productName, string companyName, int price, int leftNum, float avgPurchaseEvaluation);
+    void printViewPurchaseHistoryEndl();
 };
 
 #endif

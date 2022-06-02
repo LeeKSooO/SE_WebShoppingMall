@@ -17,17 +17,17 @@ PrintSalesStatics::PrintSalesStatics(Member *member)
 
     PrintSalesStaticsUI *ui = new PrintSalesStaticsUI();
 
-    ui->printTitle();
+    ui->printPrintSalesStaticsTitle();
 
     if (num > 0)
         for (int i = 0; i < num; i++)
         {
             int totalPrice = calTotalPrice(soldProductList[i]->getPrice(), soldProductList[i]->getSalesNum());
             float avgPurchaseEvaluation = calAvgPurchaseEvaluation(member->getMemberId(), soldProductList[i]->getProductName());
-            ui->printLine(soldProductList[i]->getProductName(), totalPrice, avgPurchaseEvaluation);
+            ui->printSalesStatics(soldProductList[i]->getProductName(), totalPrice, avgPurchaseEvaluation);
         }
 
-    ui->printEndl();
+    ui->printPrintSalesStaticsEndl();
 }
 
 int PrintSalesStatics::calTotalPrice(int price, int salesNum)
@@ -35,21 +35,21 @@ int PrintSalesStatics::calTotalPrice(int price, int salesNum)
     return price * salesNum;
 }
 
-void PrintSalesStaticsUI::printTitle()
+void PrintSalesStaticsUI::printPrintSalesStaticsTitle()
 {
     ofstream fout("output.txt", ios::app);
     fout << "5.1. 판매 상품 통계\n";
     fout.close();
 }
 
-void PrintSalesStaticsUI::printLine(string productName, int totalPrice, float avgPurchaseEvaluation)
+void PrintSalesStaticsUI::printSalesStatics(string productName, int totalPrice, float avgPurchaseEvaluation)
 {
     ofstream fout("output.txt", ios::app);
     fout << "> " << productName << " " << totalPrice << " " << avgPurchaseEvaluation << "\n";
     fout.close();
 }
 
-void PrintSalesStaticsUI::printEndl()
+void PrintSalesStaticsUI::printPrintSalesStaticsEndl()
 {
     ofstream fout("output.txt", ios::app);
     fout << "\n";
