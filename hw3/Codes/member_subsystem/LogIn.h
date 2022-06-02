@@ -20,14 +20,14 @@ public:
 
         wholeMemIndex = checkIdPw(memberId, memberPw);
 
-        // if (*nowLogIn != nullptr)
-        // {
-        //     ui->printMemberIdPw(*nowLogIn);
-        // }
-        // else
-        // {
-        //     ui->printLogInFail();
-        // }
+        if (wholeMemIndex == -1)
+        {
+            ui->printLogInFail();
+        }
+        else
+        {
+            ui->printMemberIdPw(wholeMemberArr[wholeMemIndex]);
+        }
     }
     int checkIdPw(string Id, string Pw);
 };
