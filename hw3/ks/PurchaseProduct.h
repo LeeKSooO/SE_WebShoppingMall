@@ -1,10 +1,10 @@
 #pragma once
-#include "Member.h"
-#include "Product.h"
-#include "comm.h"
+#include "../entities/Member.h"
+#include "../entities/Product.h"
+#include "../comm.h"
 #include "PurchaseProductUI.h"
 
-//°Ë»ö ÈÄ Áï½Ã ±¸¸Å
+//ï¿½Ë»ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 class PurchaseProduct {
 private:
 	Member* member;
@@ -20,7 +20,7 @@ public:
 		ui->startInterface(wholeProductArr);
 	}
 
-	void requestOrder(Member **wholeMemberArr, Product** wholeProductArr, Order** wholeOrderArr);	//¸É¹ö, »óÇ°, ÁÖ¹® Æ÷ÀÎÅÍ¹è¿­ÁÖ¼Ò
+	void requestOrder(Member **wholeMemberArr, Product** wholeProductArr, Order** wholeOrderArr);	//ï¿½É¹ï¿½, ï¿½ï¿½Ç°, ï¿½Ö¹ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í¹è¿­ï¿½Ö¼ï¿½
 };
 
 void PurchaseProduct::requestOrder(Member** wholeMemberArr, Product** wholeProductArr, Order** wholeOrderArr) {

@@ -1,6 +1,6 @@
 #pragma once
-#include "Member.h"
-#include "comm.h"
+#include "../entities/Member.h"
+#include "../comm.h"
 
 class PurchaseProductUI {
 private:
@@ -9,7 +9,7 @@ public:
 	void purchaseProduct(Member** wholeMemberArr, Product** wholeProductArr, Order** wholeOrderArr);
 };
 
-//≥™¡ﬂø° ºˆ¡§ ∞Ì∑¡
+//ÔøΩÔøΩÔøΩﬂøÔøΩ ÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩ
 void PurchaseProductUI::purchaseProduct(Member** wholeMemberArr, Product** wholeProductArr, Order** wholeOrderArr) {
 	
 	string productId = wholeProductArr[searchPoint]->getProductId();
@@ -21,11 +21,11 @@ void PurchaseProductUI::purchaseProduct(Member** wholeMemberArr, Product** whole
 }
 
 void PurchaseProductUI::startInterface(Product** wholeProductArr) {
-	ofstream fout("C:\\Users\\rtrt0\\OneDrive\\πŸ≈¡ »≠∏È\\textfile\\output.txt", ios::app);
-	fout << "4.2. ªÛ«∞ ±∏∏≈\n";
+	ofstream fout("output.txt", ios::app);
+	fout << "4.2. ÏÉÅÌíà Íµ¨Îß§\n";
 	fout << "> " << wholeProductArr[searchPoint]->getSellerId() << " " << wholeProductArr[searchPoint]->getProductName() << endl;
 
 	//----------output check----------
-	cout << "4.2. ªÛ«∞ ±∏∏≈\n";
+	cout << "4.2. ÏÉÅÌíà Íµ¨Îß§\n";
 	cout << "> " << wholeProductArr[searchPoint]->getSellerId() << " " << wholeProductArr[searchPoint]->getProductName() << endl;
 }

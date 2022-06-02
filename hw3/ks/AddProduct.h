@@ -1,6 +1,6 @@
 #pragma once
 #include "AddProductUI.h"
-#include "comm.h"
+#include "../comm.h"
 
 class AddProductUI;
 

@@ -1,4 +1,4 @@
-#include "Product.h"
+#include "../entities/Product.h"
 
 class SearchProductUI {
 private:

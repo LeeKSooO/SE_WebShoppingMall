@@ -1,5 +1,5 @@
 #pragma once
-#include "Member.h"
+#include "../entities/Member.h"
 
 class SalesProductInquiryUI {
 private:
