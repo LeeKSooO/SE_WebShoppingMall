@@ -15,11 +15,8 @@ extern int wholeMemberNum;
 extern int wholeProductNum;
 extern int wholeOrderNum;
 extern int searchPoint;
-// void setSearchPoint(int input) // 다른 소스에서도 값을 바꿀 수 있게 제공되는 wrapper 함수.
-// {
-//     searchPoint = input;
-// }
-static int wholeMemIndex;
-#endif
+extern int wholeMemIndex;
 
-float calAvgPurchaseEvaluation(string, string);
+extern float calAvgPurchaseEvaluation(string, string);
+
+#endif

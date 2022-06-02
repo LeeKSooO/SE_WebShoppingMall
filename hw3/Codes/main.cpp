@@ -27,10 +27,11 @@ void program_exit();
 static Member *wholeMemberArr[WHOLE_MEM_NUM];
 static Product *wholeProductArr[WHOLE_PRODUCT_NUM];
 static Order *wholeOrderArr[WHOLE_ORDER_NUM];
-int wholeMemberNum;
-int wholeProductNum;
-int wholeOrderNum;
+int wholeMemberNum = 0;
+int wholeProductNum = 0;
+int wholeOrderNum = 0;
 int searchPoint = 0;
+int wholeMemIndex = 0;
 // login 한 멤버 저장
 // Member nowLogIn;
 
