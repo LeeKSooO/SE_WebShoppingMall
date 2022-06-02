@@ -1,26 +1,34 @@
 #pragma once
+#include "../entities/Member.h"
+#include "../entities/Product.h"
+#include "../comm.h"
 #include "PurchaseProductUI.h"
 
-class PurchaseProductUI;
-
+//검색 후 즉시 구매
 class PurchaseProduct {
 private:
 	Member* member;
 	string productId;
 	string recipientName;
 	string deliveryAddress;
-	string contatcInformation;
+	string contactInformation;
+
 public:
-	PurchaseProduct(Order** wholeOrderArr, string id, string name, string address, string contact)
-	{
+	PurchaseProduct(Member** wholeMemberArr, Product** wholeProductArr ,Order**wholeOrderArr) {
 		PurchaseProductUI* ui = new PurchaseProductUI();
-		ui->purchaseProduct(wholeOrderArr, id, name, address, contact);
+		ui->purchaseProduct(wholeMemberArr, wholeProductArr, wholeOrderArr);
+		ui->startInterface(wholeProductArr);
 	}
 
-	void inputBuyerInfo(Order** wholeOrderArr, string productId, string recipientName, string deliveryAddress, string contactinformation);
+	void requestOrder(Member **wholeMemberArr, Product** wholeProductArr, Order** wholeOrderArr);	//맴버, 상품, 주문 포인터배열주소
 };
 
-void PurchaseProduct::inputBuyerInfo(Order** wholeOrderArr, string productId, string recipientName, string deliveryAddress, string contactInformation)
-{
-	member->registerOrderInfo(wholeOrderArr, productId, recipientName, deliveryAddress, contactInformation);
+void PurchaseProduct::requestOrder(Member** wholeMemberArr, Product** wholeProductArr, Order** wholeOrderArr) {
+	
+	productId = wholeProductArr[searchPoint]->getProductId();
+	recipientName = wholeMemberArr[wholeMemIndex]->getRecipientName(); 
+	deliveryAddress = wholeMemberArr[wholeMemIndex]->getDeliveryAddress(); 
+	contactInformation = wholeMemberArr[wholeMemIndex]->getContactInformatin(); 
+
+	member->inputOrderInfo(wholeProductArr, wholeOrderArr, productId, recipientName, deliveryAddress , contactInformation);
 }

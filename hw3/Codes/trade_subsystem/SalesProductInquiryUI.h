@@ -1,10 +1,10 @@
 #pragma once
-#include "Member.h"
+#include "../entities/Member.h"
 
 class SalesProductInquiryUI {
 private:
-public:	
-	void startInterface(Member *member) {
+public:
+	void startInterface(Member* member) {
 		member->listProductsOnSale();
 	}
 };

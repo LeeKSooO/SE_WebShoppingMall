@@ -1,33 +1,25 @@
-#pragma once
-#include "Product.h"
 #include "SearchProductUI.h"
+#include "../entities/Product.h"
+#include "../comm.h"
 
-class SearchProduct
-{
+// »óÇ° Á¤º¸ °Ë»ö : ÆÇ¸ÅÀÚid, »óÇ°¸í, Á¦ÀÛÈ¸»ç¸í, °¡°Ý, ³²Àº¼ö·®, Æò±Õ±¸¸Å¸¸Á·µµ
+class SearchProduct {
 private:
-	Product *product;
-	string pName;
-
 public:
-	SearchProduct(Product **wholeProductArr)
-	{
-
-		// control classï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ç°ï¿½ï¿½ fin
-		string pName = "hat";
-		SearchProductUI *ui = new SearchProductUI(wholeProductArr, pName);
-
-		/*
-		for (int i = 0; i < (sizeof(wholeProductArr) / sizeof(Product*)); i++) {
-			if ((wholeProductArr[i]->getProductName()) == pName) {
-				product = wholeProductArr[i];
-				cout << "goodgdgdggogodgodgodogdo" << endl;
-			}
-		}
-		*/
-		// ui->search();
-		// ui->startInterface();
+	SearchProduct(Product** wholeProductArr, string productName) {
+		SearchProductUI* ui = new SearchProductUI();
+		searchPoint = searchProduct(wholeProductArr, productName);
+		ui->startInterface(wholeProductArr[searchPoint]);
 	}
 
-	// Product* searchProductName(Product** wholeProductArr, string productName);
-	void get();
+	int searchProduct(Product** wholeProductArr, string productName);
 };
+
+int SearchProduct::searchProduct(Product** wholeProductArr, string productName) {
+	for (int i = 0; i <30; i++) {	// ÀÌ ºÎºÐ ³ªÁß¿¡ static in wholeProductNum À¸·Î ¼öÁ¤.(Áö±Ý ¼ö ¾÷µ¥ÀÌÆ® ¾ÈµÊ)
+		if ((wholeProductArr[i]->getProductName()) == productName) {
+			return i;
+		}
+	}
+	return -1;
+}
