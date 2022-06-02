@@ -10,7 +10,6 @@ using namespace std;
 class Member
 {
 private:
-   Member *nowLogin;
    string memberId;
    string memberPw;
    string memberName;
@@ -34,7 +33,6 @@ public:
    OrderCollection *getOrderCollection();
    bool checkIdPw(string Id, string Pw);
    string deleteMember();
-   void createNewMember(Member *member);
    void registerProductInfo(Product **wholeProductArr, string sellerId, string productName, string companyName, int price, int salesNum);
    void inputOrderInfo(Product **wholeProductArr, Order **wholeOrderArr);
    void listProductsOnSale();

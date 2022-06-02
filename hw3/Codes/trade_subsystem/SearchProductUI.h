@@ -12,13 +12,8 @@ private:
 
 public:
 	SearchProductUI(){};
-	void choiceProductName();
 	void startInterface(Product *product);
 };
-
-void SearchProductUI::choiceProductName()
-{
-}
 
 void SearchProductUI::startInterface(Product *product)
 {
