@@ -61,7 +61,6 @@ void doTask()
       // 1.1. 회원가입
       case 1:
       {
-        cout << "1.1. 회원가입\n";
         string name;
         string rRN;
         string Id;
@@ -91,7 +90,6 @@ void doTask()
         string memberId;
         string memberPw;
         fin >> memberId >> memberPw;
-        cout << "2.1. 로그인 " << memberId << " " << memberPw << endl;
         LogIn *li = new LogIn(wholeMemberArr, memberId, memberPw);
         break;
       }
@@ -128,7 +126,6 @@ void doTask()
       // 3.3. 판매 완료 상품 조회
       case 3:
       {
-        cout << "3.3. 판매 완료 상품 조회\n";
         ViewSoldHistory *viewSoldHistory = new ViewSoldHistory(wholeMemberArr[wholeMemIndex]);
         break;
       }
@@ -158,14 +155,12 @@ void doTask()
       // 4.3. 상품 구매 내역 조회
       case 3:
       {
-        cout << "4.3. 상품 구매 내역 조회\n";
         ViewPurchaseHistory *viewPurchaseHistory = new ViewPurchaseHistory(wholeMemberArr[wholeMemIndex]);
         break;
       }
       // 4.4. 상품 구매만족도 평가
       case 4:
       {
-        cout << "4.4. 상품 구매만족도 평가\n";
         string productName;
         int purchaseEvaluation;
         fin >> productName >> purchaseEvaluation;
@@ -183,7 +178,6 @@ void doTask()
       // 5.1. 판매 상품 통계
       case 1:
       {
-        cout << "5.1. 판매 상품 통계\n";
         PrintSalesStatics *printSalesStatics = new PrintSalesStatics(wholeMemberArr[wholeMemIndex]);
         break;
       }
@@ -198,7 +192,6 @@ void doTask()
       // 6.1. 종료
       case 1:
       {
-        cout << "6.1. 종료\n";
         program_exit();
         isProgramExit = 1;
         break;

@@ -20,7 +20,7 @@ void OrderCollection::addOrder(Product **wholeProductArr, Order **wholeOrderArr)
 
     Order *newOrder = new Order(wholeProductArr[searchPoint]->getSellerId(), wholeProductArr[searchPoint]->getProductName(), wholeProductArr[searchPoint]);
     wholeOrderArr[wholeOrderNum++] = new Order(wholeProductArr[searchPoint]->getSellerId(), wholeProductArr[searchPoint]->getProductName(), wholeProductArr[searchPoint]);
-    this->orders[(this->numOrders)++] = newOrder;
+    orders[numOrders++] = newOrder;
 
     if (head == NULL)
     {

@@ -52,15 +52,14 @@ void Member::listProductsOnSale()
       return;
    }
 
-   fout << ">  " << endl;
    cur = head;
 
-   fout << cur->getProductName() << " " << cur->getCompanyName() << " " << cur->getPrice() << " " << cur->getLeftNum() << endl;
+   fout << "> " << cur->getProductName() << " " << cur->getCompanyName() << " " << cur->getPrice() << " " << cur->getLeftNum() << endl;
 
    while (cur->getNext() != NULL)
    {
       cur = cur->getNext();
-      fout << cur->getProductName() << " " << cur->getCompanyName() << " " << cur->getPrice() << " " << cur->getLeftNum() << endl;
+      fout << "> " << cur->getProductName() << " " << cur->getCompanyName() << " " << cur->getPrice() << " " << cur->getLeftNum() << endl;
    }
-   cout << endl;
+   fout << endl;
 }

@@ -43,13 +43,6 @@ void ViewPurchaseHistoryUI::printViewPurchaseHistoryTitle()
 
 void ViewPurchaseHistoryUI::printPurchasedProduct(string sellerId, string productName, string companyName, int price, int leftNum, float avgPurchaseEvaluation)
 {
-    // string sellerId = product->getSellerId();
-    // string pname = product->getProductName();
-    // string cname = product->getCompanyName();
-    // int price = product->getPrice();
-    // int leftNum = product->getLeftNum();
-    // float avgPurchaseEvaluation = calAvgPurchaseEvaluation(product->getSellerId(), product->getProductName());
-
     ofstream fout("output.txt", ios::app);
     fout << "> " << sellerId << " " << productName << " " << companyName << " " << price << " " << leftNum << " " << round(avgPurchaseEvaluation) << "\n";
     fout.close();
