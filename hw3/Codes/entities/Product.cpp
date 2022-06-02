@@ -44,3 +44,8 @@ void Product::SetpNext(Product *newProduct)
 {
     this->next = newProduct;
 }
+
+void Product::setLeftNum()
+{
+    this->salesNum = --salesNum;
+}

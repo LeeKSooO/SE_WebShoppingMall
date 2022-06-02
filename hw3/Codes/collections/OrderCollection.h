@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include "../entities/Order.h"
+#include "../entities/Product.h"
 
 using namespace std;
 
