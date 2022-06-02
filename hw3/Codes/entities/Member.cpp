@@ -42,7 +42,7 @@ void Member::listProductsOnSale()
 {
    Product *head = productCollection->findFirst();
    Product *cur = productCollection->getCur();
-   ofstream fout("../output.txt", ios::app);
+   ofstream fout("output.txt", ios::app);
 
    fout << "3.2. ��� ��ǰ ��ȸ- - - - - - - -" << endl;
    if (head == NULL)

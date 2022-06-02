@@ -239,4 +239,4 @@ float calAvgPurchaseEvaluation(string sellerId, string productName)
   return round(result);
 }
 // cd hw3/Codes
-// g++ main.cpp entities/Member.cpp entities/Order.cpp entities/Product.cpp history_subsystem/EvaluatePurchase.cpp history_subsystem/PrintSalesStatics.cpp history_subsystem/ViewPurchaseHistory.cpp history_subsystem/ViewSoldHistory.cpp  -o main
+// g++ main.cpp entities/Member.cpp entities/Order.cpp entities/Product.cpp history_subsystem/EvaluatePurchase.cpp history_subsystem/PrintSalesStatics.cpp history_subsystem/ViewPurchaseHistory.cpp history_subsystem/ViewSoldHistory.cpp collections/ProductCollection.cpp collections/OrderCollection.cpp -o main

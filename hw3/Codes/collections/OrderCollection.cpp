@@ -7,9 +7,10 @@
 #include "../entities/Order.h"
 
 OrderCollection::OrderCollection()
-{ // ��� �ʱ�ȭ
+{
     head = NULL;
     cur = NULL;
+    numOrders = 0;
 }
 
 void OrderCollection::addOrder(Product **wholeProductArr, Order **wholeOrderArr)
@@ -17,9 +18,9 @@ void OrderCollection::addOrder(Product **wholeProductArr, Order **wholeOrderArr)
 
     // wholeMemberArr[wholeMemIndex]->setLeftNum();
     wholeProductArr[searchPoint]->setLeftNum();
-    Order *newOrder = new Order(sellerId, productName);
-    wholeOrderArr[wholeOrderNum++] = new Order(sellerId, productName);
-    this->orders[(this->numOrders)++] = order;
+    Order *newOrder = new Order(wholeProductArr[searchPoint]->getSellerId(), wholeProductArr[searchPoint]->getProductName(), wholeProductArr[searchPoint]);
+    wholeOrderArr[wholeOrderNum++] = new Order(wholeProductArr[searchPoint]->getSellerId(), wholeProductArr[searchPoint]->getProductName(), wholeProductArr[searchPoint]);
+    this->orders[(this->numOrders)++] = newOrder;
 
     if (head == NULL)
     {

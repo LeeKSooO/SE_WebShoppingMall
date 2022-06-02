@@ -13,18 +13,19 @@ class OrderCollection
 private:
     int numOrders;
     Order *orders[100]; // 구매 내역
+    Order *head;
+    Order *cur;
 
 public:
-    OrderCollection()
-    {
-        this->numOrders = 0;
-    }
+    OrderCollection();
     Order **getOrders()
     {
         return orders;
     }
     int getNumOrders() { return this->numOrders; }
     void addOrder(Product **wholeProductArr, Order **wholeOrderArr);
+    Order *findFirst();
+    Order *getCur();
 };
 
 #endif
