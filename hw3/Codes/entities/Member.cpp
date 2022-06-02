@@ -44,7 +44,7 @@ void Member::listProductsOnSale()
    Product *cur = productCollection->getCur();
    ofstream fout("output.txt", ios::app);
 
-   fout << "3.2. ��� ��ǰ ��ȸ- - - - - - - -" << endl;
+   fout << "3.2. 등록 상품 조회" << endl;
    if (head == NULL)
    {
       fout << "\n"
@@ -55,52 +55,12 @@ void Member::listProductsOnSale()
    fout << ">  " << endl;
    cur = head;
 
-   fout << "��ǰ�� : " << cur->getProductName() << endl;
-   fout << "����ȸ��� : " << cur->getCompanyName() << endl;
-   fout << "���� : " << cur->getPrice() << endl;
-   fout << "�Ǹ� ���� : " << cur->getSalesNum() << endl;
-   fout << "- - - - - - - - - - - - - - - - - - -" << endl;
-
+   fout <<  cur->getProductName() << " " << cur->getCompanyName() <<  " " << cur->getPrice() << " " <<  cur->getSalesNum() << endl;
+  
    while (cur->getNext() != NULL)
    {
       cur = cur->getNext();
-
-      fout << "��ǰ�� : " << cur->getProductName() << endl;
-      fout << "����ȸ��� : " << cur->getCompanyName() << endl;
-      fout << "���� : " << cur->getPrice() << endl;
-      fout << "�Ǹ� ���� : " << cur->getSalesNum() << endl;
-
-      fout << "- - - - - - - - - - - - - - - - - - -" << endl;
+      fout << cur->getProductName() << " " << cur->getCompanyName() << " " <<  cur->getPrice() << " " <<  cur->getSalesNum() << endl;
    }
 
-   //----------output check----------//
-   head = productCollection->findFirst();
-   cur = productCollection->getCur();
-   if (head == NULL)
-   {
-      cout << "ProductCollection is empty." << endl;
-      return;
-   }
-
-   cout << "3.2. ��� ��ǰ ��ȸ - - - - - - - - -" << endl;
-   cout << ">  " << endl;
-   cur = head;
-
-   cout << "��ǰ�� : " << cur->getProductName() << endl;
-   cout << "����ȸ��� : " << cur->getCompanyName() << endl;
-   cout << "���� : " << cur->getPrice() << endl;
-   cout << "�Ǹ� ���� : " << cur->getSalesNum() << endl;
-   cout << "- - - - - - - - - - - - - - - - - - -" << endl;
-
-   while (cur->getNext() != NULL)
-   {
-      cur = cur->getNext();
-
-      cout << "��ǰ�� : " << cur->getProductName() << endl;
-      cout << "����ȸ��� : " << cur->getCompanyName() << endl;
-      cout << "���� : " << cur->getPrice() << endl;
-      cout << "�Ǹ� ���� : " << cur->getSalesNum() << endl;
-
-      cout << "- - - - - - - - - - - - - - - - - - -" << endl;
-   }
 }

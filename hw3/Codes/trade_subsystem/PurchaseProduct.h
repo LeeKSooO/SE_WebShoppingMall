@@ -6,7 +6,6 @@
 #include "../comm.h"
 #include "PurchaseProductUI.h"
 using namespace std;
-//�˻� �� ��� ����
 class PurchaseProduct
 {
 private:
@@ -23,7 +22,7 @@ public:
 		ui->startInterface(wholeProductArr);
 	}
 
-	void requestOrder(Member **wholeMemberArr, Product **wholeProductArr, Order **wholeOrderArr); //�ɹ�, ��ǰ, �ֹ� �����͹迭�ּ�
+	void requestOrder(Member **wholeMemberArr, Product **wholeProductArr, Order **wholeOrderArr);
 };
 
 void PurchaseProduct::requestOrder(Member **wholeMemberArr, Product **wholeProductArr, Order **wholeOrderArr)

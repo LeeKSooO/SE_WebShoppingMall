@@ -5,7 +5,7 @@
 #include "../comm.h"
 #include "SearchProductUI.h"
 using namespace std;
-// ��ǰ ���� �˻� : �Ǹ���id, ��ǰ��, ����ȸ���, ����, ��������, ��ձ��Ÿ�����
+
 class SearchProduct {
 private:
 public:
@@ -19,7 +19,7 @@ public:
 };
 
 int SearchProduct::searchProduct(Product** wholeProductArr, string productName) {
-	for (int i = 0; i <30; i++) {	// �� �κ� ���߿� static in wholeProductNum ���� ����.(���� �� ������Ʈ �ȵ�)
+	for (int i = 0; i <30; i++) {	
 		if ((wholeProductArr[i]->getProductName()) == productName) {
 			return i;
 		}

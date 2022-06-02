@@ -14,16 +14,14 @@ public:
 	void startInterface(Product* product);
 };
 
-//�Լ� ȣ�� ����
+
 void SearchProductUI::choiceProductName() {
 }
 
-// ��ǰ �� ���� : �Ǹ���id, ��ǰ��, ����ȸ���, ����, ��������, ��ձ��Ÿ�����
 void SearchProductUI::startInterface(Product *product) {
-	ofstream fout("C:\\Users\\rtrt0\\OneDrive\\���� ȭ��\\textfile\\output.txt", ios::app);
+	ofstream fout("output.txt", ios::app);
 
-	cout << "4.1. ��ǰ ���� �˻�\n";
-	cout << "> " << product->getSellerId() << " " << product->getProductName() << " " << product->getCompanyName() << " " << product->getPrice()
-		<< " " << product->getSalesNum() << endl; //�ѽ��Բ��� ��ĥ �� ��� ���Ÿ����� ������Ʈ�ϱ�
-
+	fout << "4.1. 상품 정보 검색\n";
+	fout << "> " << product->getSellerId() << " " << product->getProductName() << " " << product->getCompanyName() << " " << product->getPrice()
+		<< " " << product->getSalesNum() << endl;
 }

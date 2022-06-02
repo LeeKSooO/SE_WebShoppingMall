@@ -18,7 +18,7 @@ Order::Order(string newSellerId, string newProductName, Product *newProduct)
 }
 
 Order::Order(string newSellerId, string newProductName, Product *newProduct, Order *pNext)
-{ // ��� �ʱ�ȭ
+{ 
     sellerId = newSellerId;
     productName = newProductName;
     product = newProduct;

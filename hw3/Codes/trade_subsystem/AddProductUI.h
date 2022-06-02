@@ -11,20 +11,13 @@ private:
 	string sellerId;
 public:
 	void registerProduct(Member** wholeMemberArr, Product** wholeProductArr, string sellerId, string pName, string cName, int money, int num) {
-		//cout << "index check : " << wholeMemIndex << endl;
-
-		//�α����� �� �� ���¿��� ��ǰ��� �Ұ��� // �α��� �� ���¿��� ��ǰ ��� ������ ����(�α׾ƿ��� �ʱ�ȭ)
-		//���߿� product�� member attribute �߰��ϰ� ������ ���⼭ ����
-		//sellerId = wholeMemberArr[wholeMemIndex]->getMemberId();
-		wholeMemberArr[wholeMemIndex]->registerProductInfo(wholeProductArr, sellerId, pName, cName, money, num);
 		
-		cout << "3.1. �Ǹ� �Ƿ� ���" << endl;
-		cout << "> " << wholeProductArr[wholeProductNum]->getProductName() << " " << wholeProductArr[wholeProductNum]->getCompanyName()
-			<< " " << wholeProductArr[wholeProductNum]->getPrice() << " " << wholeProductArr[wholeProductNum]->getSalesNum() << endl;
+		wholeMemberArr[wholeMemIndex]->registerProductInfo(wholeProductArr, sellerId, pName, cName, money, num);
 	}
+
 	void startInterface(Product** wholeProductArr) {
-		ofstream fout("C:\\Users\\rtrt0\\OneDrive\\���� ȭ��\\textfile\\output.txt", ios::app);
-		fout << "3.1 �Ǹ� �Ƿ� ���\n";
+		ofstream fout("output.txt", ios::app);
+		fout << "3.1 판매 의류 등록\n";
 		fout << "> " << wholeProductArr[wholeProductNum]->getProductName() << " " << wholeProductArr[wholeProductNum]->getCompanyName()
 			<< " " << wholeProductArr[wholeProductNum]->getPrice() << " " << wholeProductArr[wholeProductNum]->getSalesNum() << endl;
 		fout.close();

@@ -22,11 +22,8 @@ void PurchaseProductUI::purchaseProduct(Member **wholeMemberArr, Product **whole
 
 void PurchaseProductUI::startInterface(Product **wholeProductArr)
 {
-	ofstream fout("C:\\Users\\rtrt0\\OneDrive\\���� ȭ��\\textfile\\output.txt", ios::app);
-	fout << "4.2. ��ǰ ����\n";
+	ofstream fout("ㅐutput.txt", ios::app);
+	fout << "4.2. 상품 구매\n";
 	fout << "> " << wholeProductArr[searchPoint]->getSellerId() << " " << wholeProductArr[searchPoint]->getProductName() << endl;
 
-	//----------output check----------
-	cout << "4.2. ��ǰ ����\n";
-	cout << "> " << wholeProductArr[searchPoint]->getSellerId() << " " << wholeProductArr[searchPoint]->getProductName() << endl;
 }

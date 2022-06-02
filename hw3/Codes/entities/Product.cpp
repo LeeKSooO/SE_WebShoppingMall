@@ -13,12 +13,12 @@ Product::Product(string newSellerId, string newProductName, string newCompanyNam
     next = NULL;
 }
 Product::Product(string id, string pName, string cName, int money, int num, Product *pNext)
-{ // ��� �ʱ�ȭ
+{ 
     sellerId = id;
-    productName = pName; // ��ǰ��
-    companyName = cName; // ����ȸ���
-    price = money;       //����
-    salesNum = num;      //�Ǹ� ����
+    productName = pName; 
+    companyName = cName; 
+    price = money;       
+    salesNum = num;      
     next = pNext;
 }
 string Product::getSellerId() { return sellerId; }
