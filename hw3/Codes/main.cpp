@@ -14,6 +14,10 @@
 #include "member_subsystem/LogIn.h"
 #include "member_subsystem/LogOut.h"
 #include "member_subsystem/Withdraw.h"
+#include "trade_subsystem/AddProduct.h"
+#include "trade_subsystem/PurchaseProduct.h"
+#include "trade_subsystem/SalesProductInquiry.h"
+#include "trade_subsystem/SearchProduct.h"
 
 using namespace std;
 
@@ -108,11 +112,17 @@ void doTask()
       // 3.1. 판매 의류 등록
       case 1:
       {
+        string productName, companyName;
+        int price, salesNum;
+        fin >> productName >> companyName >> price >> salesNum;
+
+        AddProduct *addProduct = new AddProduct(wholeMemberArr, wholeProductArr, productName, companyName, price, salesNum);
         break;
       }
       // 3.2. 등록 상품 조회
       case 2:
       {
+        SalesProductInquiry *salesProductInquiry = new SalesProductInquiry(wholeMemberArr[wholeMemIndex]);
         break;
       }
       // 3.3. 판매 완료 상품 조회
@@ -133,11 +143,16 @@ void doTask()
       // 4.1. 상품 정보 검색
       case 1:
       {
+        string productName;
+        fin >> productName;
+
+        SearchProduct *searchProduct = new SearchProduct(wholeProductArr, productName);
         break;
       }
       // 4.2. 상품 구매
       case 2:
       {
+        PurchaseProduct *purchaseProduct = new PurchaseProduct(wholeMemberArr, wholeProductArr, wholeOrderArr);
         break;
       }
       // 4.3. 상품 구매 내역 조회
@@ -224,4 +239,4 @@ float calAvgPurchaseEvaluation(string sellerId, string productName)
   return round(result);
 }
 // cd hw3/Codes
-// g++ main.cpp entities/Member.cpp entities/Order.cpp entities/Product.cpp history_subsystem/EvaluatePurchase.cpp history_subsystem/PrintSalesStatics.cpp history_subsystem/ViewPurchaseHistory.cpp history_subsystem/ViewSoldHistory.cpp -o main
+// g++ main.cpp entities/Member.cpp entities/Order.cpp entities/Product.cpp history_subsystem/EvaluatePurchase.cpp history_subsystem/PrintSalesStatics.cpp history_subsystem/ViewPurchaseHistory.cpp history_subsystem/ViewSoldHistory.cpp  -o main
